@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class Form1: Form
+    public partial class customerForm: Form
     {
-        public Form1()
+        public customerForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
