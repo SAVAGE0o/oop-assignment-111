@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
+    
+
     public partial class Menu : Form
     {
         public Menu()
@@ -20,6 +22,55 @@ namespace oop_assignment
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void customerMenuBox_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            menuItems Noodles = new menuItems();
+            Noodles.Name = "Noodles";
+            customerMenuList.Items.Add(Noodles.Name);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            menuItems healthyFood = new menuItems();
+            healthyFood.Name = "Healthy Meal";
+            customerMenuList.Items.Add(healthyFood.Name);
+            
+                
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            menuItems Pizza = new menuItems();
+            Pizza.Name = "Pizza";
+            customerMenuList.Items.Add(Pizza.Name);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menuItems Donut = new menuItems();
+            Donut.Name = "Donut";
+            customerMenuList.Items.Add(Donut.Name);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            menuItems Burger = new menuItems();
+            Burger.Name = "Burger";
+            customerMenuList.Items.Add(Burger.Name);
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            menuItems Rice = new menuItems();
+            Rice.Name = "Chicken Rice";
+            customerMenuList.Items.Add(Rice.Name);
         }
     }
 }

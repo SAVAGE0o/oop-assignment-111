@@ -8,6 +8,8 @@ namespace oop_assignment
 {
     static class Program
     {
+        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,5 +20,9 @@ namespace oop_assignment
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
         }
+    }
+    public class menuItems
+    {
+        public string Name;
     }
 }
