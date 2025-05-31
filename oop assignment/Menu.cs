@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class FormCustomerDashboard: Form
+    public partial class Menu : Form
     {
-        public FormCustomerDashboard()
+        public Menu()
         {
             InitializeComponent();
-        }
-
-        private void customerMenuButton_Click(object sender, EventArgs e)
-        {
-            new Menu().Show();
-            this.Hide();
-                
         }
     }
 }
