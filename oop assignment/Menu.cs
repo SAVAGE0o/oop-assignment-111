@@ -78,5 +78,11 @@ namespace oop_assignment
             Rice.Price = 15;
             customerMenuList.Items.Add(Rice.Name);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form Checkout = new Form();
+            Checkout.Show();
+        }
     }
 }
