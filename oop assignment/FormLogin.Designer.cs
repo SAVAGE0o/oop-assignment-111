@@ -34,45 +34,49 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.LoginExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(119, 128);
+            this.lblEmail.Location = new System.Drawing.Point(134, 160);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(52, 20);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(252, 121);
+            this.txtEmail.Location = new System.Drawing.Point(284, 151);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(112, 26);
             this.txtEmail.TabIndex = 1;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(119, 181);
+            this.lblPassword.Location = new System.Drawing.Point(134, 226);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 16);
+            this.lblPassword.Size = new System.Drawing.Size(81, 20);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "password:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(252, 181);
+            this.txtPassword.Location = new System.Drawing.Point(284, 226);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(112, 26);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(192, 259);
+            this.btnLogin.Location = new System.Drawing.Point(305, 320);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(91, 39);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -81,22 +85,35 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(178, 222);
+            this.lblMessage.Location = new System.Drawing.Point(200, 278);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
+            this.lblMessage.Size = new System.Drawing.Size(0, 20);
             this.lblMessage.TabIndex = 5;
+            // 
+            // LoginExitButton
+            // 
+            this.LoginExitButton.Location = new System.Drawing.Point(138, 320);
+            this.LoginExitButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LoginExitButton.Name = "LoginExitButton";
+            this.LoginExitButton.Size = new System.Drawing.Size(89, 39);
+            this.LoginExitButton.TabIndex = 6;
+            this.LoginExitButton.Text = "Exit";
+            this.LoginExitButton.UseVisualStyleBackColor = true;
+            this.LoginExitButton.Click += new System.EventHandler(this.LoginExitButton_Click);
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.LoginExitButton);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
             this.ResumeLayout(false);
@@ -112,5 +129,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button LoginExitButton;
     }
 }

@@ -90,6 +90,7 @@
             this.customerLogoutButton.TabIndex = 6;
             this.customerLogoutButton.Text = "Logout";
             this.customerLogoutButton.UseVisualStyleBackColor = true;
+            this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
             // 
             // FormCustomerDashboard
             // 

@@ -83,6 +83,10 @@ namespace oop_assignment
             }
         }
 
+        private void LoginExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
