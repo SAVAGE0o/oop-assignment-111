@@ -36,7 +36,7 @@ namespace oop_assignment
 
         private void Checkout_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

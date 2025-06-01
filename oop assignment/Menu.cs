@@ -14,6 +14,7 @@ namespace oop_assignment
 
     public partial class Menu : Form
     {
+        string[] orderlist = { };
         public Menu()
         {
             InitializeComponent();
