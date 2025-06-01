@@ -22,5 +22,21 @@ namespace oop_assignment
             new Menu().Show();
             this.Hide();
         }
+
+        public void customerCheckoutList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void customerTotalPayment_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Checkout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

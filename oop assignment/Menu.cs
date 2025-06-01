@@ -43,8 +43,6 @@ namespace oop_assignment
             healthyFood.Name = "Salad";
             healthyFood.Price = 8;
             customerMenuList.Items.Add(healthyFood.Name);
-            
-                
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
@@ -82,6 +80,12 @@ namespace oop_assignment
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             new Checkout().Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new FormLogin().Show();
             this.Hide();
         }
     }

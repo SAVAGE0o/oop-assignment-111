@@ -38,6 +38,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.customerMenuBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -143,11 +144,22 @@
             this.customerMenuBox.Text = "Menu";
             this.customerMenuBox.Enter += new System.EventHandler(this.customerMenuBox_Enter);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(423, 320);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 42);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Return";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 397);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox customerMenuBox;
+        private System.Windows.Forms.Button button1;
     }
 }
