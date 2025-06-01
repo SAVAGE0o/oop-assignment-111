@@ -33,13 +33,15 @@ namespace oop_assignment
         {
             menuItems Noodles = new menuItems();
             Noodles.Name = "Noodles";
+            Noodles.Price = 10;
             customerMenuList.Items.Add(Noodles.Name);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             menuItems healthyFood = new menuItems();
-            healthyFood.Name = "Healthy Meal";
+            healthyFood.Name = "Salad";
+            healthyFood.Price = 8;
             customerMenuList.Items.Add(healthyFood.Name);
             
                 
@@ -49,6 +51,7 @@ namespace oop_assignment
         {
             menuItems Pizza = new menuItems();
             Pizza.Name = "Pizza";
+            Pizza.Price = 25;
             customerMenuList.Items.Add(Pizza.Name);
         }
 
@@ -56,6 +59,7 @@ namespace oop_assignment
         {
             menuItems Donut = new menuItems();
             Donut.Name = "Donut";
+            Donut.Price = 5;
             customerMenuList.Items.Add(Donut.Name);
         }
 
@@ -63,6 +67,7 @@ namespace oop_assignment
         {
             menuItems Burger = new menuItems();
             Burger.Name = "Burger";
+            Burger.Price = 20;
             customerMenuList.Items.Add(Burger.Name);
         }
 
@@ -70,6 +75,7 @@ namespace oop_assignment
         {
             menuItems Rice = new menuItems();
             Rice.Name = "Chicken Rice";
+            Rice.Price = 15;
             customerMenuList.Items.Add(Rice.Name);
         }
     }

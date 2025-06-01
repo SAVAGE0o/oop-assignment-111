@@ -24,5 +24,6 @@ namespace oop_assignment
     public class menuItems
     {
         public string Name;
+        public float Price;
     }
 }
