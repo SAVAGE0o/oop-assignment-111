@@ -81,8 +81,8 @@ namespace oop_assignment
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form Checkout = new Form();
-            Checkout.Show();
+            new Checkout().Show();
+            this.Hide();
         }
     }
 }
