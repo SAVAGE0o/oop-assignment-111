@@ -12,18 +12,24 @@ namespace oop_assignment
 {
     public partial class Checkout : Form
     {
+        private List<menuItems> receivedOrders;
 
-        private string[] receivedOrders; // Step 3: Hold the received array
-
-        // Step 4: Create constructor that accepts the array
-        public Checkout(string[] orders)
+        public Checkout(List<menuItems> orders)
         {
             InitializeComponent();
             receivedOrders = orders;
 
-            
-        }
+            float totalPrice = 0;
 
+            foreach (menuItems item in receivedOrders)
+            {
+                customerCheckoutList.Items.Add(item.Name);
+                totalPrice += item.Price;
+                customerTotalPayment.Text = totalPrice.ToString() + " RM";
+            }
+
+          
+        }
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,13 +49,9 @@ namespace oop_assignment
            
         }
 
-        private void Checkout_Load(object sender, EventArgs e)
+        public void Checkout_Load(object sender, EventArgs e)
         {
-            // Step 5: Display the items in the ListBox
-            foreach (string item in receivedOrders)
-            {
-                customerCheckoutList.Items.Add(item);
-            }
+        
         }
     }
 }

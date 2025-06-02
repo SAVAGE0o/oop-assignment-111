@@ -15,7 +15,7 @@ namespace oop_assignment
 
     public partial class Menu : Form
     {
-        public string[] orderlist = { };
+        public List<menuItems> orderlist = new List<menuItems>();
         public Menu()
         {
 
@@ -38,7 +38,7 @@ namespace oop_assignment
             Noodles.Name = "Noodles";
             Noodles.Price = 10;
             customerMenuList.Items.Add(Noodles.Name);
-            orderlist.Append(Noodles.Name);
+            orderlist.Add(Noodles);
             
         }
 
@@ -48,7 +48,7 @@ namespace oop_assignment
             healthyFood.Name = "Salad";
             healthyFood.Price = 8;
             customerMenuList.Items.Add(healthyFood.Name);
-            orderlist.Append(healthyFood.Name);
+            orderlist.Add(healthyFood);
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace oop_assignment
             Pizza.Name = "Pizza";
             Pizza.Price = 25;
             customerMenuList.Items.Add(Pizza.Name);
-            orderlist.Append(Pizza.Name);
+            orderlist.Add(Pizza);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace oop_assignment
             Donut.Name = "Donut";
             Donut.Price = 5;
             customerMenuList.Items.Add(Donut.Name);
-            orderlist.Append(Donut.Name);
+            orderlist.Add(Donut);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace oop_assignment
             Burger.Name = "Burger";
             Burger.Price = 20;
             customerMenuList.Items.Add(Burger.Name);
-            orderlist.Append(Burger.Name);
+            orderlist.Add(Burger);
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -84,11 +84,12 @@ namespace oop_assignment
             Rice.Name = "Chicken Rice";
             Rice.Price = 15;
             customerMenuList.Items.Add(Rice.Name);
-            orderlist.Append(Rice.Name);
+            orderlist.Add(Rice);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             Checkout checkoutForm = new Checkout(orderlist);
             checkoutForm.Show();
             this.Hide();
