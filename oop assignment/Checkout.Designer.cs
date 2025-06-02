@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.customerPaymentButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.customerBalance = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.customerTotalPayment = new System.Windows.Forms.TextBox();
@@ -65,6 +65,7 @@
             this.customerPaymentButton.TabIndex = 2;
             this.customerPaymentButton.Text = "Confirm";
             this.customerPaymentButton.UseVisualStyleBackColor = true;
+            this.customerPaymentButton.Click += new System.EventHandler(this.customerPaymentButton_Click);
             // 
             // label2
             // 
@@ -75,14 +76,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "E-wallet balance:";
             // 
-            // textBox1
+            // customerBalance
             // 
-            this.textBox1.Location = new System.Drawing.Point(660, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "50 Rm";
+            this.customerBalance.Location = new System.Drawing.Point(660, 53);
+            this.customerBalance.Name = "customerBalance";
+            this.customerBalance.ReadOnly = true;
+            this.customerBalance.Size = new System.Drawing.Size(100, 26);
+            this.customerBalance.TabIndex = 5;
+            this.customerBalance.Text = "50 Rm";
             // 
             // button2
             // 
@@ -120,7 +121,7 @@
             this.Controls.Add(this.customerTotalPayment);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.customerBalance);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customerPaymentButton);
             this.Controls.Add(this.label1);
@@ -139,7 +140,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button customerPaymentButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox customerBalance;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox customerTotalPayment;
