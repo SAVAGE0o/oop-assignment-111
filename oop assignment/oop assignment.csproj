@@ -58,6 +58,12 @@
     <Compile Include="Form222.Designer.cs">
       <DependentUpon>Form222.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,18 @@
     <Compile Include="FormCustomerDashboard.Designer.cs">
       <DependentUpon>FormCustomerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleteUser.Designer.cs">
+      <DependentUpon>FormDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUser.Designer.cs">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,13 +106,43 @@
     <Compile Include="FormManagerDashboard.Designer.cs">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelectUserToEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectUserToEdit.Designer.cs">
+      <DependentUpon>FormSelectUserToEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewUsers.Designer.cs">
+      <DependentUpon>FormViewUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminDashboard.resx">
+      <DependentUpon>FormAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleteUser.resx">
+      <DependentUpon>FormDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditUser.resx">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectUserToEdit.resx">
+      <DependentUpon>FormSelectUserToEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewUsers.resx">
+      <DependentUpon>FormViewUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
