@@ -16,5 +16,23 @@ namespace oop_assignment
         {
             InitializeComponent();
         }
+
+        private void btnManageMenu_Click(object sender, EventArgs e)
+        {
+            panelManageMenu.Visible = true;
+            panelOrders.Visible = false;
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            panelManageMenu.Visible = false;
+            panelOrders.Visible = true;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

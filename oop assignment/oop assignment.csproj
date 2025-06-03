@@ -88,13 +88,37 @@
     <Compile Include="FormManagerDashboard.Designer.cs">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Menu.Designer.cs">
+      <DependentUpon>Manage Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminDashboard.resx">
+      <DependentUpon>FormAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChefDashboard.resx">
+      <DependentUpon>FormChefDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage Menu.resx">
+      <DependentUpon>Manage Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
