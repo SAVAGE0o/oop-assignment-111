@@ -23,7 +23,7 @@ namespace oop_assignment
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            string connectionString = "Data Source=AboFares;Initial Catalog=SedapMakanDB;Integrated Security=True";
+            string connectionString = "Data Source=(local);Initial Catalog=SedapMakanDB;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -31,50 +31,40 @@ namespace oop_assignment
                 {
                     conn.Open();
 
-                    string query = "SELECT Role FROM Users WHERE Email = @Email AND Password = @Password";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
+                    // Step 1: Check in Users table
+                    string queryUsers = "SELECT Role FROM Users WHERE Email = @Email AND Password = @Password";
+                    SqlCommand cmdUsers = new SqlCommand(queryUsers, conn);
+                    cmdUsers.Parameters.AddWithValue("@Email", email);
+                    cmdUsers.Parameters.AddWithValue("@Password", password);
 
-                    object result = cmd.ExecuteScalar();
+                    object resultUsers = cmdUsers.ExecuteScalar();
 
-                    if (result != null)
+                    if (resultUsers != null)
                     {
-                        string role = result.ToString();
-
-                        // ✅ Show simple message box
+                        string role = resultUsers.ToString();
                         MessageBox.Show("Login successful! Role: " + role);
 
-                        // ✅ Open the correct form
+                        // Redirect based on role
                         if (role == "System Admin")
-                        {
                             new FormAdminDashboard().Show();
-                            this.Hide();
-                        }
                         else if (role == "Manager")
-                        {
                             new FormManagerDashboard().Show();
-                            this.Hide();
-                        }
                         else if (role == "Chef")
-                        {
                             new FormChefDashboard().Show();
-                            this.Hide();
-                        }
                         else if (role == "Customer")
-                        {
                             new FormCustomerDashboard().Show();
-                            this.Hide();
-                        }
                         else
-                        {
                             MessageBox.Show("Unknown role: " + role);
-                        }
+
+                        this.Hide();
                     }
                     else
                     {
-                        lblMessage.Text = "Invalid email or password.";
+                            lblMessage.Text = "Invalid email or password.";
                     }
+                    
+
+                    
                 }
                 catch (Exception ex)
                 {
@@ -82,6 +72,7 @@ namespace oop_assignment
                 }
             }
         }
+
 
         private void LoginExitButton_Click(object sender, EventArgs e)
         {
