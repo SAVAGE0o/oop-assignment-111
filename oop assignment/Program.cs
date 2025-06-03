@@ -21,9 +21,11 @@ namespace oop_assignment
             Application.Run(new FormLogin());
         }
     }
-    public class menuItems
+    public class MenuItem
     {
-        public string Name;
-        public float Price;
+        public string Name { get; set; }
+        public float Price { get; set; }
+        public bool Available { get; set; }
     }
+
 }

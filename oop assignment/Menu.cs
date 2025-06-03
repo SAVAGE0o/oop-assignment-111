@@ -16,8 +16,7 @@ namespace oop_assignment
 
     public partial class Menu : Form
     {
-        string connectionString = "Data Source=AboFares;Initial Catalog=SedapMakanDB;Integrated Security=True";
-
+       
        
         
         public List<menuItems> orderlist = new List<menuItems>();
@@ -26,61 +25,20 @@ namespace oop_assignment
             InitializeComponent();
         }
 
-        private bool IsItemAvailable(string itemName)
-        {
-            bool available = false;
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string query = "SELECT availability FROM Menu WHERE item_name = @itemName";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@itemName", itemName);
-
-                    conn.Open();
-                    object result = cmd.ExecuteScalar();
-                    conn.Close();
-
-                    if (result == "No")
-                    {
-                        MessageBox.Show($"'{itemName}' was not found in the Menu table.");
-                    }
-                    else if (result.ToString().ToLower() == "yes")
-                    {
-                        available = true;
-                    }
-                }
-            }
-            catch 
-            {
-               
-            }
-
-            return available;
-        }
-
-        private void HandleItemClick(string itemName)
-        {
-            if (IsItemAvailable(itemName))
-            {
-                customerMenuList.Items.Add(itemName);
-            }
-            else
-            {
-                MessageBox.Show(itemName + " is currently not available.");
-            }
-        }
+       
         private void label1_Click(object sender, EventArgs e)
         {
+            
 
         }
 
         private void customerMenuBox_Enter(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        
+        
+        
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             menuItems Noodles = new menuItems();
@@ -96,18 +54,28 @@ namespace oop_assignment
             menuItems healthyFood = new menuItems();
             healthyFood.Name = "Salad";
             healthyFood.Price = 8;
+            healthyFood.Available = true;
             customerMenuList.Items.Add(healthyFood.Name);
             orderlist.Add(healthyFood);
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            HandleItemClick("Pizza");
+            menuItems Pizza = new menuItems();
+            Pizza.Name = "Pizza";
+            Pizza.Price = 25;
+            Pizza.Available = true;
+            customerMenuList.Items.Add(Pizza.Name);
+            orderlist.Add(Pizza);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            HandleItemClick("Donut");
+            menuItems Donut = new menuItems();
+            Donut.Name = "Donut";
+            Donut.Price = 25;
+            Donut.Available = false;
+            MessageBox.Show("This item is currently unavailable.");
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -127,7 +95,7 @@ namespace oop_assignment
             customerMenuList.Items.Add(Rice.Name);
             orderlist.Add(Rice);
         }
-
+    
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -135,6 +103,7 @@ namespace oop_assignment
             checkoutForm.Show();
             this.Hide();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
