@@ -42,31 +42,56 @@ namespace oop_assignment
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             menuItems Noodles = new menuItems();
-            Noodles.Name = "Noodles";
-            Noodles.Price = 10;
-            customerMenuList.Items.Add(Noodles.Name);
-            orderlist.Add(Noodles);
-            
+
+            if (Noodles.IsAvailable("Noodles"))
+            {
+                Noodles.Name = "Noodles";
+                Noodles.Price = Noodles.GetPrice("Noodles");
+
+                customerMenuList.Items.Add(Noodles.Name);
+                orderlist.Add(Noodles);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Noodles is not available at the moment.");
+            }
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            menuItems healthyFood = new menuItems();
-            healthyFood.Name = "Salad";
-            healthyFood.Price = 8;
-            healthyFood.Available = true;
-            customerMenuList.Items.Add(healthyFood.Name);
-            orderlist.Add(healthyFood);
+            menuItems healthyfood = new menuItems();
+
+            if (healthyfood.IsAvailable("Salad"))
+            {
+                healthyfood.Name = "Salad";
+                healthyfood.Price = Pizza.GetPrice("Pizza");
+
+                customerMenuList.Items.Add(Pizza.Name);
+                orderlist.Add(Pizza);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Pizza is not available at the moment.");
+            }
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             menuItems Pizza = new menuItems();
-            Pizza.Name = "Pizza";
-            Pizza.Price = 25;
-            Pizza.Available = true;
-            customerMenuList.Items.Add(Pizza.Name);
-            orderlist.Add(Pizza);
+
+            if (Pizza.IsAvailable("Pizza"))
+            {
+                Pizza.Name = "Pizza";
+                Pizza.Price = Pizza.GetPrice("Pizza");
+
+                customerMenuList.Items.Add(Pizza.Name);
+                orderlist.Add(Pizza);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Pizza is not available at the moment.");
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
