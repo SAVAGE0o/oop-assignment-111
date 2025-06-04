@@ -53,7 +53,7 @@ namespace oop_assignment
                         }
                         else if (role == "Manager")
                         {
-                            new FormManagerDashboard().Show();
+                            new FormManagerDashboard( string managerId).Show();
                             this.Hide();
                         }
                         else if (role == "Chef")

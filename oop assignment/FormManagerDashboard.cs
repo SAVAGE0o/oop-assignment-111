@@ -12,9 +12,16 @@ namespace oop_assignment
 {
     public partial class FormManagerDashboard: Form
     {
-        public FormManagerDashboard()
+        public FormManagerDashboard(string managerId)
         {
             InitializeComponent();
+            this.managerId = managerId;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form4(managerId).ShowDialog();
+        }
+
     }
 }
