@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewOrders = new System.Windows.Forms.Button();
-            this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
+            this.btnViewOrders = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,14 +48,16 @@
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
-            // btnViewOrders
+            // dataGridView1
             // 
-            this.btnViewOrders.Location = new System.Drawing.Point(113, 141);
-            this.btnViewOrders.Name = "btnViewOrders";
-            this.btnViewOrders.Size = new System.Drawing.Size(157, 39);
-            this.btnViewOrders.TabIndex = 0;
-            this.btnViewOrders.Text = "View Orders";
-            this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(343, 201);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(350, 181);
+            this.dataGridView1.TabIndex = 2;
             // 
             // btnUpdateStatus
             // 
@@ -65,16 +67,17 @@
             this.btnUpdateStatus.TabIndex = 1;
             this.btnUpdateStatus.Text = "Update Status";
             this.btnUpdateStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
             // 
-            // dataGridView1
+            // btnViewOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(343, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(350, 181);
-            this.dataGridView1.TabIndex = 2;
+            this.btnViewOrders.Location = new System.Drawing.Point(113, 141);
+            this.btnViewOrders.Name = "btnViewOrders";
+            this.btnViewOrders.Size = new System.Drawing.Size(157, 39);
+            this.btnViewOrders.TabIndex = 0;
+            this.btnViewOrders.Text = "View Orders";
+            this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // Orders
             // 

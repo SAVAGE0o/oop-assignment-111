@@ -114,6 +114,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerDashboard.resx">
+      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage Menu.resx">
       <DependentUpon>Manage Menu.cs</DependentUpon>
     </EmbeddedResource>

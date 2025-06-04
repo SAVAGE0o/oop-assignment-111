@@ -34,5 +34,11 @@ namespace oop_assignment
             Application.Exit();
 
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chef Profile: John Doe\nExperience: 5 years\nSpecialty: Italian Cuisine");
+
+        }
     }
 }

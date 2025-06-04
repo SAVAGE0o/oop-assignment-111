@@ -51,8 +51,8 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogout.Location = new System.Drawing.Point(0, 114);
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.Location = new System.Drawing.Point(0, 396);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(200, 54);
             this.btnLogout.TabIndex = 3;
@@ -63,9 +63,9 @@
             // btnOrders
             // 
             this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOrders.Location = new System.Drawing.Point(0, 83);
+            this.btnOrders.Location = new System.Drawing.Point(0, 112);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(200, 31);
+            this.btnOrders.Size = new System.Drawing.Size(200, 54);
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.btnManageMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageMenu.Location = new System.Drawing.Point(0, 50);
             this.btnManageMenu.Name = "btnManageMenu";
-            this.btnManageMenu.Size = new System.Drawing.Size(200, 33);
+            this.btnManageMenu.Size = new System.Drawing.Size(200, 62);
             this.btnManageMenu.TabIndex = 1;
             this.btnManageMenu.Text = "Manage Menu\t";
             this.btnManageMenu.UseVisualStyleBackColor = true;
@@ -91,6 +91,7 @@
             this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // FormChefDashboard
             // 
