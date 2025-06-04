@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace oop_assignment
@@ -23,9 +26,17 @@ namespace oop_assignment
     }
     public class menuItems
     {
-        public string Name { get; set; }
-        public float Price { get; set; }
-        public bool Available { get; set; }
-    }
 
+        private SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True");
+
+        public DataTable GetAvailableMenuItems()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Menu WHERE availability = 'Yes'";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(dt);
+            return dt;
+        }
+    }
 }
+  

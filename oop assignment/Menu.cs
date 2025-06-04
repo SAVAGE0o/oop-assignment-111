@@ -110,5 +110,10 @@ namespace oop_assignment
             new FormLogin().Show();
             this.Hide();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
