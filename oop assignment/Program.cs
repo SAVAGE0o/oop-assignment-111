@@ -11,7 +11,7 @@ namespace oop_assignment
 {
     static class Program
     {
-        
+
 
         /// <summary>
         /// The main entry point for the application.
@@ -56,8 +56,10 @@ namespace oop_assignment
 
             return result != null ? Convert.ToInt32(result) : 0;
         }
-    }
+
 
 }
-
   
+
+
+}

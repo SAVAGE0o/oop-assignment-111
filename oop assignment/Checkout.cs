@@ -66,5 +66,10 @@ namespace oop_assignment
                 this.Close();
             }
         }
+
+        private void customerBalance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

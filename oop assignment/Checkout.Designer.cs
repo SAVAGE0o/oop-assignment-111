@@ -84,6 +84,7 @@
             this.customerBalance.Size = new System.Drawing.Size(100, 26);
             this.customerBalance.TabIndex = 5;
             this.customerBalance.Text = "50 Rm";
+            this.customerBalance.TextChanged += new System.EventHandler(this.customerBalance_TextChanged);
             // 
             // button2
             // 
