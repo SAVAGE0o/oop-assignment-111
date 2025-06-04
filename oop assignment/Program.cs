@@ -21,7 +21,7 @@ namespace oop_assignment
             Application.Run(new FormLogin());
         }
     }
-    public class MenuItem
+    public class menuItems
     {
         public string Name { get; set; }
         public float Price { get; set; }
