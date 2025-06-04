@@ -65,14 +65,14 @@ namespace oop_assignment
             if (healthyfood.IsAvailable("Salad"))
             {
                 healthyfood.Name = "Salad";
-                healthyfood.Price = Pizza.GetPrice("Pizza");
+                healthyfood.Price = healthyfood.GetPrice("Salad");
 
-                customerMenuList.Items.Add(Pizza.Name);
-                orderlist.Add(Pizza);
+                customerMenuList.Items.Add(healthyfood.Name);
+                orderlist.Add(healthyfood);
             }
             else
             {
-                MessageBox.Show("Sorry, Pizza is not available at the moment.");
+                MessageBox.Show("Sorry, Salad is not available at the moment.");
             }
         }
 
@@ -96,29 +96,59 @@ namespace oop_assignment
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
             menuItems Donut = new menuItems();
-            Donut.Name = "Donut";
-            Donut.Price = 25;
-            Donut.Available = false;
-            MessageBox.Show("This item is currently unavailable.");
+
+            if (Donut.IsAvailable("Donut"))
+            {
+                Donut.Name = "Donut";
+                Donut.Price = Donut.GetPrice("Donut");
+
+                customerMenuList.Items.Add(Donut.Name);
+                orderlist.Add(Donut);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Donut is not available at the moment.");
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+
             menuItems Burger = new menuItems();
-            Burger.Name = "Burger";
-            Burger.Price = 20;
-            customerMenuList.Items.Add(Burger.Name);
-            orderlist.Add(Burger);
+
+            if (Burger.IsAvailable("Burger"))
+            {
+                Burger.Name = "Burger";
+                Burger.Price = Burger.GetPrice("Burger");
+
+                customerMenuList.Items.Add(Burger.Name);
+                orderlist.Add(Burger);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Burger is not available at the moment.");
+            }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+
             menuItems Rice = new menuItems();
-            Rice.Name = "Chicken Rice";
-            Rice.Price = 15;
-            customerMenuList.Items.Add(Rice.Name);
-            orderlist.Add(Rice);
+
+            if (Rice.IsAvailable("Chicken Rice"))
+            {
+                Rice.Name = "Chicken Rice";
+                Rice.Price = Rice.GetPrice("Chicken Rice");
+
+                customerMenuList.Items.Add(Rice.Name);
+                orderlist.Add(Rice);
+            }
+            else
+            {
+                MessageBox.Show("Sorry, Chicken Rice is not available at the moment.");
+            }
         }
     
         private void pictureBox1_Click(object sender, EventArgs e)

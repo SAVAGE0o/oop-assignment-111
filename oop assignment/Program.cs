@@ -33,7 +33,7 @@ namespace oop_assignment
 
         public bool IsAvailable(string itemName)
         {
-            string query = "SELECT COUNT(*) FROM Menu WHERE name = @name AND availability = 'Yes'";
+            string query = "SELECT COUNT(*) FROM Menu WHERE item_name = @name AND availability = 'Yes'";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@name", itemName);
 
@@ -46,7 +46,7 @@ namespace oop_assignment
 
         public int GetPrice(string itemName)
         {
-            string query = "SELECT price FROM Menu WHERE name = @name";
+            string query = "SELECT price FROM Menu WHERE item_name = @name";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@name", itemName);
 
@@ -59,5 +59,5 @@ namespace oop_assignment
     }
 
 }
-}
+
   
