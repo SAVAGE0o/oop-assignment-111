@@ -52,6 +52,17 @@ namespace oop_assignment
         public void Checkout_Load(object sender, EventArgs e)
         {
 
+            try
+            {
+                UserWallet wallet = new UserWallet(CurrentSession.UserId);
+                customerBalance.Text = wallet.Balance.ToString("C");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing balance: " + ex.Message);
+            }
+
+
         }
 
         private void customerPaymentButton_Click(object sender, EventArgs e)
