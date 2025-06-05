@@ -56,16 +56,40 @@ namespace oop_assignment
 
         private void customerPaymentButton_Click(object sender, EventArgs e)
         {
-            if (totalPrice > 50)
+           
+            try
             {
-                MessageBox.Show("Payment Exceeded your E-Wallet Balance");
+                // Use UserId directly instead of Username
+                UserWallet wallet = new UserWallet(CurrentSession.UserId);
+                decimal total = 0;
+
+                foreach (menuItems item in receivedOrders)
+                {
+                    total += item.Price;
+                }
+
+                if (wallet.Deduct(total))
+                {
+                    OrderManager orderManager = new OrderManager();
+                    foreach (menuItems item in receivedOrders)
+                    {
+                        int itemId = DBHelper.GetItemIdFromDatabase(item.Name);
+                        orderManager.PlaceOrder(wallet.UserId, itemId, 1);
+                    }
+                    MessageBox.Show("All orders placed and payment successful.");
+                }
+                else
+                {
+                    MessageBox.Show("Insufficient wallet balance.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Payment Successful! Thank you for your order.");
-                this.Close();
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
 
         private void customerBalance_TextChanged(object sender, EventArgs e)
         {

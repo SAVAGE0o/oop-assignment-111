@@ -20,9 +20,9 @@ namespace oop_assignment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
-
             string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -31,45 +31,44 @@ namespace oop_assignment
                 {
                     conn.Open();
 
-                    string query = "SELECT Role FROM Users WHERE Email = @Email AND Password = @Password";
+                    // Updated query to also retrieve UserId
+                    string query = "SELECT UserId, Role FROM Users WHERE Email = @Email AND Password = @Password";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Password", password);
 
-                    object result = cmd.ExecuteScalar();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (result != null)
+                    if (reader.Read())
                     {
-                        string role = result.ToString();
+                        // Store UserId and Role in session
+                        CurrentSession.UserId = Convert.ToInt32(reader["UserId"]);
+                        
+                        string role = reader["Role"].ToString();
 
-                        // ✅ Show simple message box
-                        MessageBox.Show("Login successful! Role: " + role);
+                        MessageBox.Show("Login successful! Role: " + role + "\nUserId: " + CurrentSession.UserId);
 
-                        // ✅ Open the correct form
-                        if (role == "System Admin")
+                        // Open the correct dashboard
+                        switch (role)
                         {
-                            new FormAdminDashboard().Show();
-                            this.Hide();
+                            case "System Admin":
+                                new FormAdminDashboard().Show();
+                                break;
+                            case "Manager":
+                                new FormManagerDashboard().Show();
+                                break;
+                            case "Chef":
+                                new FormChefDashboard().Show();
+                                break;
+                            case "Customer":
+                                new FormCustomerDashboard().Show();
+                                break;
+                            default:
+                                MessageBox.Show("Unknown role: " + role);
+                                return;
                         }
-                        else if (role == "Manager")
-                        {
-                            new FormManagerDashboard().Show();
-                            this.Hide();
-                        }
-                        else if (role == "Chef")
-                        {
-                            new FormChefDashboard().Show();
-                            this.Hide();
-                        }
-                        else if (role == "Customer")
-                        {
-                            new FormCustomerDashboard().Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Unknown role: " + role);
-                        }
+
+                        this.Hide();
                     }
                     else
                     {
@@ -82,6 +81,7 @@ namespace oop_assignment
                 }
             }
         }
+
 
         private void LoginExitButton_Click(object sender, EventArgs e)
         {
