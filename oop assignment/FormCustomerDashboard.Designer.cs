@@ -70,8 +70,9 @@
             this.customerSupportButton.Name = "customerSupportButton";
             this.customerSupportButton.Size = new System.Drawing.Size(127, 61);
             this.customerSupportButton.TabIndex = 4;
-            this.customerSupportButton.Text = "Support";
+            this.customerSupportButton.Text = "Orders";
             this.customerSupportButton.UseVisualStyleBackColor = true;
+            this.customerSupportButton.Click += new System.EventHandler(this.customerSupportButton_Click);
             // 
             // customerFeedbackButton
             // 
