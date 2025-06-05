@@ -28,12 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.runOrderList = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.returnButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.refundList = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(329, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Running Orders (Click for Cancelling & Refund)";
+            // 
+            // runOrderList
+            // 
+            this.runOrderList.FormattingEnabled = true;
+            this.runOrderList.ItemHeight = 20;
+            this.runOrderList.Location = new System.Drawing.Point(62, 122);
+            this.runOrderList.Name = "runOrderList";
+            this.runOrderList.Size = new System.Drawing.Size(325, 184);
+            this.runOrderList.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(62, 344);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 44);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Confirm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(760, 410);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(108, 44);
+            this.returnButton.TabIndex = 10;
+            this.returnButton.Text = "Return";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(458, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Refund Status";
+            // 
+            // refundList
+            // 
+            this.refundList.FormattingEnabled = true;
+            this.refundList.ItemHeight = 20;
+            this.refundList.Location = new System.Drawing.Point(462, 122);
+            this.refundList.Name = "refundList";
+            this.refundList.Size = new System.Drawing.Size(325, 184);
+            this.refundList.TabIndex = 12;
+            // 
+            // Orders
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(897, 477);
+            this.Controls.Add(this.refundList);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.returnButton);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.runOrderList);
+            this.Controls.Add(this.label1);
+            this.Name = "Orders";
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Orders_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox runOrderList;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button returnButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox refundList;
     }
 }

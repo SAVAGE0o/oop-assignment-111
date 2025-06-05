@@ -35,5 +35,11 @@ namespace oop_assignment
             new Orders().Show();
             this.Hide();
         }
+
+        private void customerFeedbackButton_Click(object sender, EventArgs e)
+        {
+            new Feedback().Show();
+            this.Hide();
+        }
     }
 }

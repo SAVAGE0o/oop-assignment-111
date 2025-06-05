@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class Orders : Form
+    public partial class Feedback : Form
     {
-        public Orders()
+        public Feedback()
         {
             InitializeComponent();
         }
@@ -21,20 +21,6 @@ namespace oop_assignment
         {
             new FormCustomerDashboard().Show();
             this.Hide();
-        }
-
-        private void Orders_Load(object sender, EventArgs e)
-        {
-
-            OrderManager orderManager = new OrderManager();
-            List<string> orders = orderManager.GetOrdersByUser(CurrentSession.UserId);
-
-            runOrderList.Items.Clear();
-            foreach (string order in orders)
-            {
-                runOrderList.Items.Add(order);
-            }
-
         }
     }
 }

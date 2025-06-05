@@ -103,6 +103,26 @@ namespace oop_assignment
             }
             return userId;
         }
+        public static string GetItemNameFromDatabase(int itemId)
+        {
+            string itemName = "";
+            string query = "SELECT item_name FROM Menu WHERE Item_id = @itemId";
+
+            using (SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True"))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@itemId", itemId);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    itemName = result.ToString();
+                }
+            }
+
+            return itemName;
+        }
+
     }
 
 
@@ -192,6 +212,32 @@ namespace oop_assignment
                 cmd.ExecuteNonQuery();
             }
         }
+        public List<string> GetOrdersByUser(int userId)
+        {
+            List<string> orders = new List<string>();
+            string query = "SELECT item_id, quantity, status FROM Orders WHERE UserId = @userId";
+
+            using (SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True"))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int itemId = Convert.ToInt32(reader["item_id"]);
+                    int quantity = Convert.ToInt32(reader["quantity"]);
+                    string status = reader["status"].ToString();
+
+                    string itemName = DBHelper.GetItemNameFromDatabase(itemId);
+                    orders.Add($"{itemName} x{quantity} - {status}");
+                }
+            }
+
+            return orders;
+        }
+
     }
 
 }
