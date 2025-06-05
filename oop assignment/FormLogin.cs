@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace oop_assignment
 {
     public partial class FormLogin: Form
-    {
+    { private string  managerId = "12345"; 
         public FormLogin()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace oop_assignment
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            string connectionString = "Data Source=Abofares;Initial Catalog=SedapMakanDB;Integrated Security=True";
+            string connectionString = "Data Source=CYBORG\\SQLEXPRESS;Initial Catalog=C#;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -53,7 +53,7 @@ namespace oop_assignment
                         }
                         else if (role == "Manager")
                         {
-                            new FormManagerDashboard( string managerId).Show();
+                            new FormManagerDashboard(managerId).Show();
                             this.Hide();
                         }
                         else if (role == "Chef")
@@ -83,6 +83,10 @@ namespace oop_assignment
             }
         }
 
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

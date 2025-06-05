@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class FormManagerDashboard: Form
+    public partial class FormManagerDashboard : Form
     {
-        private string managerId;
-          
+        private readonly string managerId; // Made the field readonly to fix IDE0044
+
         public FormManagerDashboard(string managerId)
         {
             InitializeComponent();
