@@ -339,5 +339,36 @@ namespace oop_assignment
         }
     }
 
+    public class FeedbackManager
+    {
+        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
+
+        public void SubmitFeedback(int userId, int orderId, string message)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Feedback (UserId, order_id, message, respond) VALUES (@userId, @orderId, @message, NULL)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@orderId", orderId);
+                cmd.Parameters.AddWithValue("@message", message);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public bool HasFeedback(int userId, int orderId)
+        {
+            using (SqlConnection conn = new SqlConnection("Data Source = Abofares; Initial Catalog = C#;Integrated Security=True"))
+            {
+                string query = "SELECT COUNT(*) FROM Feedback WHERE UserId = @userId AND order_id = @orderId";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@orderId", orderId);
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+    }
 
 }
