@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.runOrderList = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.returnButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,14 +55,15 @@
             this.runOrderList.Size = new System.Drawing.Size(325, 184);
             this.runOrderList.TabIndex = 4;
             // 
-            // button1
+            // cancelButton
             // 
-            this.button1.Location = new System.Drawing.Point(62, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(62, 344);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(108, 44);
+            this.cancelButton.TabIndex = 6;
+            this.cancelButton.Text = "Confirm";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // returnButton
             // 
@@ -100,12 +101,14 @@
             this.Controls.Add(this.refundList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.returnButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.runOrderList);
             this.Controls.Add(this.label1);
             this.Name = "Orders";
             this.Text = "Orders";
+
             this.Load += new System.EventHandler(this.Orders_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,7 +118,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox runOrderList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Label label2;
