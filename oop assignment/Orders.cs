@@ -26,6 +26,7 @@ namespace oop_assignment
         private void Orders_Load(object sender, EventArgs e)
         {
             LoadRunningOrders(); // method to load orders
+            LoadRefundStatus(); // method to load refund status
         }
 
 
