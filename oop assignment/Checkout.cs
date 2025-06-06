@@ -78,7 +78,11 @@ namespace oop_assignment
                 {
                     total += item.Price;
                 }
-
+                if(total == 0)
+                {
+                    MessageBox.Show("No items to checkout.");
+                    return;
+                }
                 if (wallet.Deduct(total))
                 {
                     OrderManager orderManager = new OrderManager();
