@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class Form4 : Form
+    public partial class ManagerFeedBack : Form
     {
 
         private string managerId;
@@ -19,18 +19,18 @@ namespace oop_assignment
        
         
 
-        public Form4()
+        public ManagerFeedBack()
         {
             InitializeComponent();
 
         }
-        public Form4(string id)
+        public ManagerFeedBack(string id)
         {
             InitializeComponent();
             managerId = id;
         }
 
-        public Form4(SqlConnection conn)
+        public ManagerFeedBack(SqlConnection conn)
         {
             this.conn = conn;
         }

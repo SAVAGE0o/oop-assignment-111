@@ -22,7 +22,7 @@ namespace oop_assignment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new Form4(managerId).ShowDialog();
+            new ManagerFeedBack(managerId).ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
