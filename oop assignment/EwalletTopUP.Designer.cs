@@ -41,7 +41,8 @@
             // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(247, 118);
+            this.txtCustomerId.Location = new System.Drawing.Point(257, 73);
+            this.txtCustomerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(100, 22);
             this.txtCustomerId.TabIndex = 0;
@@ -49,7 +50,8 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(247, 73);
+            this.txtAmount.Location = new System.Drawing.Point(257, 118);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 22);
             this.txtAmount.TabIndex = 1;
@@ -65,18 +67,21 @@
             // 
             // btnTopUp
             // 
-            this.btnTopUp.Location = new System.Drawing.Point(272, 169);
+            this.btnTopUp.Location = new System.Drawing.Point(257, 169);
+            this.btnTopUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTopUp.Name = "btnTopUp";
-            this.btnTopUp.Size = new System.Drawing.Size(75, 23);
+            this.btnTopUp.Size = new System.Drawing.Size(97, 46);
             this.btnTopUp.TabIndex = 3;
             this.btnTopUp.Text = "Top Up";
             this.btnTopUp.UseVisualStyleBackColor = true;
+            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
             // 
             // btnCheckBalance
             // 
-            this.btnCheckBalance.Location = new System.Drawing.Point(153, 169);
+            this.btnCheckBalance.Location = new System.Drawing.Point(137, 169);
+            this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckBalance.Size = new System.Drawing.Size(99, 46);
             this.btnCheckBalance.TabIndex = 4;
             this.btnCheckBalance.Text = "Check balance";
             this.btnCheckBalance.UseVisualStyleBackColor = true;
@@ -85,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 73);
+            this.label1.Location = new System.Drawing.Point(149, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 5;
@@ -104,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 41);
+            this.label3.Location = new System.Drawing.Point(133, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 16);
             this.label3.TabIndex = 7;
@@ -112,7 +117,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(280, 424);
+            this.button1.Location = new System.Drawing.Point(280, 423);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -133,6 +139,7 @@
             this.Controls.Add(this.lblCurrentBalance);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtCustomerId);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EwalletTopUP";
             this.Text = "EwalletTopUP";
             this.Load += new System.EventHandler(this.EwalletTopUP_Load);

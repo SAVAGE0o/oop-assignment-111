@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class Managersupport : Form
+    public partial class Form4 : Form
     {
-        public Managersupport()
+        public Form4()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new EwalletTopUP().ShowDialog();
         }
     }
 }

@@ -44,12 +44,12 @@ namespace oop_assignment
         private void EwalletTopUP_Load(object sender, EventArgs e)
         {
             {
-                string customerId = txtCustomerId.Text.Trim();
+                string UserId = txtCustomerId.Text.Trim();
                 decimal amount;
 
-                if (string.IsNullOrWhiteSpace(customerId))
+                if (string.IsNullOrWhiteSpace(UserId))
                 {
-                    MessageBox.Show("Please enter the Customer ID.");
+                    MessageBox.Show("Please enter the User ID.");
                     return;
                 }
 
@@ -65,12 +65,12 @@ namespace oop_assignment
                     string updateQuery = "UPDATE Users SET WalletBalance = WalletBalance + @amount WHERE UserId = @userId";
                     SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
                     updateCmd.Parameters.AddWithValue("@amount", amount);
-                    updateCmd.Parameters.AddWithValue("@userId", customerId);
+                    updateCmd.Parameters.AddWithValue("@userId", UserId);
 
                     // Insert into WalletTransactions
                     string insertQuery = "INSERT INTO WalletTransactions (UserId, Amount, Type, TransactionDate) VALUES (@userId, @amount, 'TopUp', GETDATE())";
                     SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-                    insertCmd.Parameters.AddWithValue("@userId", customerId);
+                    insertCmd.Parameters.AddWithValue("@userId", UserId);
                     insertCmd.Parameters.AddWithValue("@amount", amount);
 
                     conn.Open();
@@ -94,24 +94,24 @@ namespace oop_assignment
             }
         }
 
-            
+
 
         private void btnCheckBalance_Click(object sender, EventArgs e)
         {
-         
-            string customerId = txtCustomerId.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(customerId))
+            string userId = txtCustomerId.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(userId))
             {
-                MessageBox.Show("Please enter the Customer ID.");
+                MessageBox.Show("Please enter the User ID.");
                 return;
             }
 
             try
             {
-                string query = "SELECT WalletBalance FROM Users WHERE UserId = @userId";
+                string query = "SELECT WalletBalance FROM Users WHERE UserId = @uid";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", customerId);
+                cmd.Parameters.AddWithValue("@uid", userId);
 
                 conn.Open();
                 object result = cmd.ExecuteScalar();
@@ -123,8 +123,7 @@ namespace oop_assignment
                 }
                 else
                 {
-                    MessageBox.Show("Customer not found.");
-                    lblCurrentBalance.Text = "Current Balance: N/A";
+                    lblCurrentBalance.Text = "User not found.";
                 }
             }
             catch (Exception ex)
@@ -136,7 +135,59 @@ namespace oop_assignment
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
+
+        }
+
+        private void btnTopUp_Click(object sender, EventArgs e)
+        {
+            string userId = txtCustomerId.Text.Trim();
+            decimal amount;
+
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                MessageBox.Show("Please enter the User ID.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtAmount.Text, out amount) || amount <= 0)
+            {
+                MessageBox.Show("Please enter a valid top-up amount.");
+                return;
+            }
+
+            try
+            {
+                string updateQuery = "UPDATE Users SET WalletBalance = WalletBalance + @amount WHERE UserId = @uid";
+                SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+                updateCmd.Parameters.AddWithValue("@amount", amount);
+                updateCmd.Parameters.AddWithValue("@uid", userId);
+
+                string insertQuery = "INSERT INTO WalletTransactions (UserId, Amount, Type, TransactionDate) VALUES (@uid, @amount, 'TopUp', GETDATE())";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+                insertCmd.Parameters.AddWithValue("@uid", userId);
+                insertCmd.Parameters.AddWithValue("@amount", amount);
+
+                conn.Open();
+                updateCmd.ExecuteNonQuery();
+                insertCmd.ExecuteNonQuery();
+                conn.Close();
+
+                MessageBox.Show("Top-up successful.");
+                txtAmount.Clear();
+                btnCheckBalance_Click(null, null); // Refresh balance
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error processing top-up: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
         }
     }
-    
 }
+
+        
+    
