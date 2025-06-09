@@ -23,7 +23,7 @@ namespace oop_assignment
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            string connectionString = "Data Source=MSI;Initial Catalog=SedapMakanDB;Integrated Security=True";
+            string connectionString = "Data Source=DESKTOP-EUEK254;Initial Catalog=c#;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -83,6 +83,10 @@ namespace oop_assignment
             }
         }
 
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

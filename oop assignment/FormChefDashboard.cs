@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace oop_assignment
 {
@@ -19,14 +20,16 @@ namespace oop_assignment
 
         private void btnManageMenu_Click(object sender, EventArgs e)
         {
-            panelManageMenu.Visible = true;
-            panelOrders.Visible = false;
+            new FormManagerDashboard().Show();
+            this.Hide();
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            panelManageMenu.Visible = false;
-            panelOrders.Visible = true;
+            Orders ordersForm = new Orders();
+            ordersForm.Show();
+
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -37,8 +40,8 @@ namespace oop_assignment
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chef Profile: John Doe\nExperience: 5 years\nSpecialty: Italian Cuisine");
-
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.Show();
         }
     }
 }

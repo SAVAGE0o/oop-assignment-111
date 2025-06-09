@@ -29,39 +29,67 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonGoback = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.buttonGoback);
+            this.panel1.Controls.Add(this.cmbStatus);
+            this.panel1.Controls.Add(this.dataGridViewOrders);
             this.panel1.Controls.Add(this.btnUpdateStatus);
             this.panel1.Controls.Add(this.btnViewOrders);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(979, 521);
             this.panel1.TabIndex = 0;
-            this.panel1.Visible = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataGridView1
+            // buttonGoback
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(343, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(350, 181);
-            this.dataGridView1.TabIndex = 2;
+            this.buttonGoback.Location = new System.Drawing.Point(23, 395);
+            this.buttonGoback.Name = "buttonGoback";
+            this.buttonGoback.Size = new System.Drawing.Size(127, 29);
+            this.buttonGoback.TabIndex = 4;
+            this.buttonGoback.Text = "Go back";
+            this.buttonGoback.UseVisualStyleBackColor = true;
+            this.buttonGoback.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "All",
+            "In Progress",
+            "Completed",
+            "Cancelled"});
+            this.cmbStatus.Location = new System.Drawing.Point(254, 177);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(121, 28);
+            this.cmbStatus.TabIndex = 3;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
+            // 
+            // dataGridViewOrders
+            // 
+            this.dataGridViewOrders.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrders.Location = new System.Drawing.Point(397, 177);
+            this.dataGridViewOrders.Name = "dataGridViewOrders";
+            this.dataGridViewOrders.RowHeadersWidth = 62;
+            this.dataGridViewOrders.RowTemplate.Height = 28;
+            this.dataGridViewOrders.Size = new System.Drawing.Size(485, 312);
+            this.dataGridViewOrders.TabIndex = 2;
+            this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
             // 
             // btnUpdateStatus
             // 
-            this.btnUpdateStatus.Location = new System.Drawing.Point(113, 201);
+            this.btnUpdateStatus.Location = new System.Drawing.Point(77, 290);
             this.btnUpdateStatus.Name = "btnUpdateStatus";
             this.btnUpdateStatus.Size = new System.Drawing.Size(157, 42);
             this.btnUpdateStatus.TabIndex = 1;
@@ -71,7 +99,7 @@
             // 
             // btnViewOrders
             // 
-            this.btnViewOrders.Location = new System.Drawing.Point(113, 141);
+            this.btnViewOrders.Location = new System.Drawing.Point(77, 230);
             this.btnViewOrders.Name = "btnViewOrders";
             this.btnViewOrders.Size = new System.Drawing.Size(157, 39);
             this.btnViewOrders.TabIndex = 0;
@@ -83,12 +111,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(992, 534);
             this.Controls.Add(this.panel1);
             this.Name = "Orders";
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Orders_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,8 +125,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.Button btnViewOrders;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Button buttonGoback;
     }
 }

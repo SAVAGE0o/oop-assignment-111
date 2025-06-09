@@ -115,6 +115,7 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button panelManageMenu;
         private System.Windows.Forms.Button panelOrders;
+        private System.Windows.Forms.TextBox numPrice;
 
     }
 }
