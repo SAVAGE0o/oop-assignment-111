@@ -31,9 +31,9 @@
             this.MlblTitle = new System.Windows.Forms.Label();
             this.txtResponse = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvFeedback = new System.Windows.Forms.DataGridView();
+            this.dgvRefunds = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedback)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefunds)).BeginInit();
             this.SuspendLayout();
             // 
             // MlblTitle
@@ -67,17 +67,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgvFeedback
+            // dgvRefunds
             // 
-            this.dgvFeedback.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFeedback.Location = new System.Drawing.Point(144, 98);
-            this.dgvFeedback.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvFeedback.Name = "dgvFeedback";
-            this.dgvFeedback.RowHeadersWidth = 51;
-            this.dgvFeedback.RowTemplate.Height = 24;
-            this.dgvFeedback.Size = new System.Drawing.Size(525, 171);
-            this.dgvFeedback.TabIndex = 3;
+            this.dgvRefunds.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRefunds.Location = new System.Drawing.Point(144, 98);
+            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvRefunds.Name = "dgvRefunds";
+            this.dgvRefunds.RowHeadersWidth = 51;
+            this.dgvRefunds.RowTemplate.Height = 24;
+            this.dgvRefunds.Size = new System.Drawing.Size(525, 171);
+            this.dgvRefunds.TabIndex = 3;
+            this.dgvRefunds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedback_CellContentClick);
             // 
             // button2
             // 
@@ -97,7 +98,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dgvFeedback);
+            this.Controls.Add(this.dgvRefunds);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtResponse);
             this.Controls.Add(this.MlblTitle);
@@ -106,7 +107,7 @@
             this.Name = "ManagerFeedBack";
             this.Text = "ManagerFeedBack";
             this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedback)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefunds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Label MlblTitle;
         private System.Windows.Forms.TextBox txtResponse;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvFeedback;
+        private System.Windows.Forms.DataGridView dgvRefunds;
         private System.Windows.Forms.Button button2;
     }
 }

@@ -21,5 +21,10 @@ namespace oop_assignment
         {
             new EwalletTopUP().ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new FormManagerRefundRQ().ShowDialog();
+        }
     }
 }

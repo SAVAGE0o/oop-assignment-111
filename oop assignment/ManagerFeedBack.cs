@@ -59,13 +59,13 @@ namespace oop_assignment
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvFeedback.DataSource = dt;
+                    dgvRefunds.DataSource = dt;
 
                     // Optional formatting
-                    dgvFeedback.Columns["ID"].Width = 50;
-                    dgvFeedback.Columns["Customer Name"].Width = 150;
-                    dgvFeedback.Columns["Feedback"].Width = 300;
-                    dgvFeedback.Columns["Date"].Width = 120;
+                    dgvRefunds.Columns["ID"].Width = 50;
+                    dgvRefunds.Columns["Customer Name"].Width = 150;
+                    dgvRefunds.Columns["Feedback"].Width = 300;
+                    dgvRefunds.Columns["Date"].Width = 120;
                 }
                 catch (Exception ex)
                 {
@@ -77,7 +77,7 @@ namespace oop_assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dgvFeedback.SelectedRows.Count == 0)
+            if (dgvRefunds.SelectedRows.Count == 0)
     {
         MessageBox.Show("Please select a feedback entry to respond to.");
         return;
@@ -91,7 +91,7 @@ namespace oop_assignment
 
     try
     {
-        int feedbackId = Convert.ToInt32(dgvFeedback.SelectedRows[0].Cells["ID"].Value);
+        int feedbackId = Convert.ToInt32(dgvRefunds.SelectedRows[0].Cells["ID"].Value);
         string response = txtResponse.Text.Trim();
 
         string query = "UPDATE Feedback SET ResponseText = @response WHERE FeedbackId = @id";
@@ -122,6 +122,11 @@ namespace oop_assignment
         private void button2_Click(object sender, EventArgs e)
         {
           Close();
+
+        }
+
+        private void dgvFeedback_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -64,6 +64,12 @@
     <Compile Include="Form222.Designer.cs">
       <DependentUpon>Form222.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManagerRefundRQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerRefundRQ.Designer.cs">
+      <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerFeedBack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerRefundRQ.resx">
+      <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerFeedBack.resx">
       <DependentUpon>ManagerFeedBack.cs</DependentUpon>
