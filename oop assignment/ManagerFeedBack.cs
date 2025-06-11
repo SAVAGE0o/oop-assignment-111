@@ -11,79 +11,92 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
+   
     public partial class ManagerFeedBack : Form
     {
-
-        private string managerId;
+        private const string V = @"
+                    SELECT 
+                        f.FeedbackId AS [ID],
+                        u.Username AS [Customer Name],
+                        o.order_id AS [OrderID],
+                        f.FeedbackText AS [Feedback],
+                        f.respond AS [Manager Response],
+                        f.status AS [Status],
+                        f.FeedbackDate AS [Date]
+                    FROM Feedback f
+                    INNER JOIN Users u ON f.UserId = u.UserId
+                    INNER JOIN Orders o ON f.order_id = o.order_id";
         private SqlConnection conn = new SqlConnection(@"Data Source=CYBORG\SQLEXPRESS;Initial Catalog=C#;Integrated Security=True");
+
+
+        // Store the manager's ID passed during form initialization
+        private string managerId;
        
-        
+        public ManagerFeedBack(string managerId)
+        {
+            InitializeComponent();
+            this.managerId = managerId;
+        }
 
         public ManagerFeedBack()
         {
-            InitializeComponent();
-
-        }
-        public ManagerFeedBack(string id)
-        {
-            InitializeComponent();
-            managerId = id;
         }
 
-        public ManagerFeedBack(SqlConnection conn)
+        // Form load event handler
+        private void ManagerFeedBack_Load(object sender, EventArgs e)
         {
-            this.conn = conn;
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
+            // Load feedback data
             LoadFeedback();
-
         }
 
+        // Method to load feedback from database into DataGridView
         private void LoadFeedback()
         {
-            {
                 try
                 {
                     string query = @"
                     SELECT 
-                        FeedbackId AS [ID],
-                        CustomerName AS [Customer Name],
-                        FeedbackText AS [Feedback],
-                        responseText AS [ Manager Response],
-                        FeedbackDate AS [Date]
-                    FROM Feedback";
+                        f.FeedbackId AS [ID],
+                        u.Username AS [Customer Name],
+                        o.OrderId AS [Order ID],
+                        f.FeedbackText AS [Feedback],
+                        f.respond AS [Manager Response],
+                        f.status AS [Status],
+                        f.FeedbackDate AS [Date]
+                    FROM Feedback f
+                    INNER JOIN Users u ON f.UserId = u.UserId
+                    INNER JOIN Orders o ON f.order_id = o.order_id";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvRefunds.DataSource = dt;
+                dgvFeedBack.DataSource = dt;  // Bind the data to DataGridView
 
-                    // Optional formatting
-                    dgvRefunds.Columns["ID"].Width = 50;
-                    dgvRefunds.Columns["Customer Name"].Width = 150;
-                    dgvRefunds.Columns["Feedback"].Width = 300;
-                    dgvRefunds.Columns["Date"].Width = 120;
+                // Optional column formatting for DataGridView
+                dgvFeedBack.Columns["ID"].Width = 50;
+                dgvFeedBack.Columns["Customer Name"].Width = 150;
+                dgvFeedBack.Columns["Order ID"].Width = 100;
+                dgvFeedBack.Columns["Feedback"].Width = 300;
+                dgvFeedBack.Columns["Manager Response"].Width = 200;
+                dgvFeedBack.Columns["Status"].Width = 100;
+                dgvFeedBack.Columns["Date"].Width = 120;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error loading feedback: " + ex.Message);
                 }
             }
-        }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        // Method to handle the response button click event
+        private void btnSubmet(object sender, EventArgs e)
         {
-            if (dgvRefunds.SelectedRows.Count == 0)
+            if (dgvFeedBack.SelectedRows.Count == 0)
     {
         MessageBox.Show("Please select a feedback entry to respond to.");
         return;
     }
 
-    if (string.IsNullOrWhiteSpace(txtResponse.Text))
+            if (string.IsNullOrWhiteSpace(txtResponses.Text))
     {
         MessageBox.Show("Please enter a response.");
         return;
@@ -91,10 +104,12 @@ namespace oop_assignment
 
     try
     {
-        int feedbackId = Convert.ToInt32(dgvRefunds.SelectedRows[0].Cells["ID"].Value);
-        string response = txtResponse.Text.Trim();
+                // Get the Feedback ID from the selected row
+                int feedbackId = Convert.ToInt32(dgvFeedBack.SelectedRows[0].Cells["ID"].Value);
+                string response = txtResponses.Text.Trim();
 
-        string query = "UPDATE Feedback SET ResponseText = @response WHERE FeedbackId = @id";
+                // SQL query to update the response for the selected feedback
+                string query = "UPDATE Feedback SET respond = @response, status = 'Replied' WHERE FeedbackId = @id";
         SqlCommand cmd = new SqlCommand(query, conn);
         cmd.Parameters.AddWithValue("@response", response);
         cmd.Parameters.AddWithValue("@id", feedbackId);
@@ -104,8 +119,8 @@ namespace oop_assignment
         conn.Close();
 
         MessageBox.Show("Response submitted successfully.");
-        txtResponse.Clear();
-        LoadFeedback(); // Refresh the grid
+                txtResponses.Clear();  // Clear the response text box
+                LoadFeedback(); // Refresh the DataGridView to show the updated response
     }
     catch (Exception ex)
     {
@@ -118,16 +133,16 @@ namespace oop_assignment
     }
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
+        // Optional: Event handler for DataGridView cell click (if needed)
+        private void dgvFeedBack_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          Close();
-
+            // Handle any actions when clicking on a DataGridView cell (e.g., highlight the row or show more details)
         }
 
-        private void dgvFeedback_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtResponses_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
 }
+
