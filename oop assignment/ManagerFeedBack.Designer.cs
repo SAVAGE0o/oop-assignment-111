@@ -28,86 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MlblTitle = new System.Windows.Forms.Label();
-            this.txtResponse = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgvRefunds = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRefunds)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvFeedBack = new System.Windows.Forms.DataGridView();
+            this.rtbResponses = new System.Windows.Forms.RichTextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedBack)).BeginInit();
             this.SuspendLayout();
             // 
-            // MlblTitle
+            // label1
             // 
-            this.MlblTitle.AutoSize = true;
-            this.MlblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MlblTitle.Location = new System.Drawing.Point(296, 66);
-            this.MlblTitle.Name = "MlblTitle";
-            this.MlblTitle.Size = new System.Drawing.Size(202, 30);
-            this.MlblTitle.TabIndex = 0;
-            this.MlblTitle.Text = "Customer Feedback";
-            this.MlblTitle.UseCompatibleTextRendering = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(229, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Costumer Feedback";
             // 
-            // txtResponse
+            // dgvFeedBack
             // 
-            this.txtResponse.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtResponse.Location = new System.Drawing.Point(144, 274);
-            this.txtResponse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(525, 22);
-            this.txtResponse.TabIndex = 1;
+            this.dgvFeedBack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFeedBack.Location = new System.Drawing.Point(96, 44);
+            this.dgvFeedBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvFeedBack.Name = "dgvFeedBack";
+            this.dgvFeedBack.RowHeadersWidth = 51;
+            this.dgvFeedBack.RowTemplate.Height = 24;
+            this.dgvFeedBack.Size = new System.Drawing.Size(420, 172);
+            this.dgvFeedBack.TabIndex = 1;
+            this.dgvFeedBack.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedBack_CellContentClick);
             // 
-            // button1
+            // rtbResponses
             // 
-            this.button1.Location = new System.Drawing.Point(343, 304);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Submit Response";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.rtbResponses.Location = new System.Drawing.Point(96, 221);
+            this.rtbResponses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbResponses.Name = "rtbResponses";
+            this.rtbResponses.Size = new System.Drawing.Size(311, 79);
+            this.rtbResponses.TabIndex = 2;
+            this.rtbResponses.Text = "";
+            this.rtbResponses.TextChanged += new System.EventHandler(this.txtResponses_TextChanged);
             // 
-            // dgvRefunds
+            // btnSubmit
             // 
-            this.dgvRefunds.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRefunds.Location = new System.Drawing.Point(144, 98);
-            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvRefunds.Name = "dgvRefunds";
-            this.dgvRefunds.RowHeadersWidth = 51;
-            this.dgvRefunds.RowTemplate.Height = 24;
-            this.dgvRefunds.Size = new System.Drawing.Size(525, 171);
-            this.dgvRefunds.TabIndex = 3;
-            this.dgvRefunds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedback_CellContentClick);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(675, 420);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 28);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "back to menu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(424, 220);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(92, 79);
+            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // ManagerFeedBack
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dgvRefunds);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtResponse);
-            this.Controls.Add(this.MlblTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.rtbResponses);
+            this.Controls.Add(this.dgvFeedBack);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManagerFeedBack";
             this.Text = "ManagerFeedBack";
-            this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRefunds)).EndInit();
+            this.Load += new System.EventHandler(this.ManagerFeedBack_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,10 +100,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label MlblTitle;
-        private System.Windows.Forms.TextBox txtResponse;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvRefunds;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvFeedBack;
+        private System.Windows.Forms.RichTextBox rtbResponses;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

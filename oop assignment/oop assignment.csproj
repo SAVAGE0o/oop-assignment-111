@@ -70,12 +70,6 @@
     <Compile Include="FormManagerRefundRQ.Designer.cs">
       <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFeedBack.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerFeedBack.Designer.cs">
-      <DependentUpon>ManagerFeedBack.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +100,13 @@
     <Compile Include="FormManagerDashboard.Designer.cs">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerFeedBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFeedBack.Designer.cs">
+      <DependentUpon>ManagerFeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFeedBackHelpers.cs" />
     <Compile Include="Managersupport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,14 +124,14 @@
     <EmbeddedResource Include="FormManagerRefundRQ.resx">
       <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFeedBack.resx">
-      <DependentUpon>ManagerFeedBack.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManagerDashboard.resx">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFeedBack.resx">
+      <DependentUpon>ManagerFeedBack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Managersupport.resx">
       <DependentUpon>Managersupport.cs</DependentUpon>

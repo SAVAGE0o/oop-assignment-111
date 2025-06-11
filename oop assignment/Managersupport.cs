@@ -26,5 +26,15 @@ namespace oop_assignment
         {
             new FormManagerRefundRQ().ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Managersupport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
