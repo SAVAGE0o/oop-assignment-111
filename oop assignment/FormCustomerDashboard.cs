@@ -28,6 +28,7 @@ namespace oop_assignment
         {
             Form FormLogin = new FormLogin();
             FormLogin.Show();
+            this.Hide();
         }
 
         private void customerSupportButton_Click(object sender, EventArgs e)

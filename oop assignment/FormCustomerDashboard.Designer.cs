@@ -89,9 +89,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::oop_assignment.Properties.Resources.Screenshot_2025_06_09_181429;
-            this.pictureBox1.Location = new System.Drawing.Point(-147, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(-96, -8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(679, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(748, 106);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);

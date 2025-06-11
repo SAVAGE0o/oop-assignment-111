@@ -205,7 +205,7 @@ namespace oop_assignment
 
         public override string ToString()
         {
-            return $"{ItemName} x{Quantity} - {Status}";
+            return $"#{OrderId} - {ItemName} x{Quantity} - {Status}";
         }
     }
 
@@ -278,11 +278,12 @@ namespace oop_assignment
                     string checkQuery = "SELECT status, item_id FROM Orders WHERE order_id = @orderId AND UserId = @userId";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
                     checkCmd.Parameters.AddWithValue("@orderId", orderId);
-                    checkCmd.Parameters.AddWithValue("@userId", userId);
+                    checkCmd.Parameters.AddWithValue("@userId", userId); 
 
                     SqlDataReader reader = checkCmd.ExecuteReader();
                     if (!reader.Read())
                     {
+                        MessageBox.Show("Order not found or not owned by user.");
                         conn.Close();
                         return false; // Order not found or not owned by user
                     }
@@ -293,6 +294,7 @@ namespace oop_assignment
 
                     if (status != "In Progress")
                     {
+                        MessageBox.Show(status + orderId + userId);
                         conn.Close();
                         return false; // Only 'In Progress' orders can be cancelled
                     }

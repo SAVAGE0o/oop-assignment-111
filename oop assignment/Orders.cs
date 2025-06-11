@@ -20,7 +20,7 @@ namespace oop_assignment
         OrderManager orderManager = new OrderManager();
         int userId = CurrentSession.UserId;
 
-        private List<OrderInfo> currentOrders;
+        
 
         public Orders()
         {
@@ -37,12 +37,14 @@ namespace oop_assignment
         private void LoadRunningOrders()
         {
             runOrderList.Items.Clear();
-            currentOrders = orderManager.GetOrdersByUser(userId);
+            var orders = orderManager.GetOrdersByUser(userId);
 
-            foreach (var order in currentOrders)
+            foreach (var order in orders)
             {
-                if (order.Status == "In Progress")
+                if (order.Status.Trim().Equals("In Progress", StringComparison.OrdinalIgnoreCase))
+                {
                     runOrderList.Items.Add(order); 
+                }
             }
         }
 
@@ -64,9 +66,8 @@ namespace oop_assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (runOrderList.SelectedIndex >= 0)
+            if (runOrderList.SelectedItem is OrderInfo selectedOrder)
             {
-                OrderInfo selectedOrder = currentOrders[runOrderList.SelectedIndex];
                 string reason = cancelReasonText.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(reason))
@@ -80,10 +81,9 @@ namespace oop_assignment
                 if (success)
                 {
                     MessageBox.Show("Order cancelled and refund requested.");
-
                     LoadRunningOrders();
                     LoadRefundStatus();
-                    cancelReasonText.Clear(); 
+                    cancelReasonText.Clear();
                 }
                 else
                 {

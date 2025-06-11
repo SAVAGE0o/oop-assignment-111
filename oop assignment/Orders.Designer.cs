@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.refundList = new System.Windows.Forms.ListBox();
             this.cancelReasonText = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -91,22 +92,32 @@
             this.refundList.ItemHeight = 20;
             this.refundList.Location = new System.Drawing.Point(462, 122);
             this.refundList.Name = "refundList";
-            this.refundList.Size = new System.Drawing.Size(325, 184);
+            this.refundList.Size = new System.Drawing.Size(423, 184);
             this.refundList.TabIndex = 12;
             // 
             // cancelReasonText
             // 
-            this.cancelReasonText.Location = new System.Drawing.Point(62, 323);
+            this.cancelReasonText.Location = new System.Drawing.Point(62, 344);
             this.cancelReasonText.Name = "cancelReasonText";
-            this.cancelReasonText.Size = new System.Drawing.Size(325, 92);
+            this.cancelReasonText.Size = new System.Drawing.Size(325, 71);
             this.cancelReasonText.TabIndex = 13;
             this.cancelReasonText.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 321);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Reason";
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 477);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cancelReasonText);
             this.Controls.Add(this.refundList);
             this.Controls.Add(this.label2);
@@ -132,5 +143,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox refundList;
         private System.Windows.Forms.RichTextBox cancelReasonText;
+        private System.Windows.Forms.Label label3;
     }
 }
