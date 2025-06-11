@@ -8,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static oop_assignment.OrderManager;
 
 namespace oop_assignment
 {
     public partial class Feedback : Form
     {
-        OrderCancellationManager cancellationManager = new OrderCancellationManager();
-        OrderManager orderManager = new OrderManager();
         int userId = CurrentSession.UserId;
 
-        private FeedbackManager feedbackManager = new FeedbackManager();
+        OrderManager orderManager = new OrderManager();
+        OrderCancellationManager cancellationManager = new OrderCancellationManager();
+        FeedbackManager feedbackManager = new FeedbackManager();
+
 
         public Feedback()
         {
@@ -78,6 +80,10 @@ namespace oop_assignment
             }
         }
 
+        private void doneOrderList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

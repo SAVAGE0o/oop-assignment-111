@@ -35,6 +35,7 @@
             this.returnButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.refundList = new System.Windows.Forms.ListBox();
+            this.cancelReasonText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(62, 344);
+            this.cancelButton.Location = new System.Drawing.Point(62, 421);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(108, 44);
             this.cancelButton.TabIndex = 6;
@@ -67,7 +68,7 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(760, 410);
+            this.returnButton.Location = new System.Drawing.Point(679, 421);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(108, 44);
             this.returnButton.TabIndex = 10;
@@ -93,11 +94,20 @@
             this.refundList.Size = new System.Drawing.Size(325, 184);
             this.refundList.TabIndex = 12;
             // 
+            // cancelReasonText
+            // 
+            this.cancelReasonText.Location = new System.Drawing.Point(62, 323);
+            this.cancelReasonText.Name = "cancelReasonText";
+            this.cancelReasonText.Size = new System.Drawing.Size(325, 92);
+            this.cancelReasonText.TabIndex = 13;
+            this.cancelReasonText.Text = "";
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 477);
+            this.Controls.Add(this.cancelReasonText);
             this.Controls.Add(this.refundList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.returnButton);
@@ -106,9 +116,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Orders";
             this.Text = "Orders";
-
             this.Load += new System.EventHandler(this.Orders_Load);
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +131,6 @@
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox refundList;
+        private System.Windows.Forms.RichTextBox cancelReasonText;
     }
 }

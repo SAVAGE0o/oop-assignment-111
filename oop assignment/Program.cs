@@ -261,114 +261,151 @@ namespace oop_assignment
         }
 
 
-    }
-    public class OrderCancellationManager
-    {
-        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
-        // Cancel an order and insert into CancelledOrders
-        public bool CancelOrder(int orderId, int userId)
+
+        public class OrderCancellationManager
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
+
+            // Cancel an order and insert refund request
+            public bool CancelOrder(int orderId, int userId, string reason)
             {
-                string checkQuery = "SELECT status FROM Orders WHERE order_id = @orderId AND UserId = @userId";
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                checkCmd.Parameters.AddWithValue("@orderId", orderId);
-                checkCmd.Parameters.AddWithValue("@userId", userId);
-
-                conn.Open();
-                SqlDataReader reader = checkCmd.ExecuteReader();
-
-                if (reader.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
+                    conn.Open();
+
+                    // Step 1: Check if the order exists and is cancellable
+                    string checkQuery = "SELECT status, item_id FROM Orders WHERE order_id = @orderId AND UserId = @userId";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@orderId", orderId);
+                    checkCmd.Parameters.AddWithValue("@userId", userId);
+
+                    SqlDataReader reader = checkCmd.ExecuteReader();
+                    if (!reader.Read())
+                    {
+                        conn.Close();
+                        return false; // Order not found or not owned by user
+                    }
+
                     string status = reader["status"].ToString();
+                    int itemId = Convert.ToInt32(reader["item_id"]);
                     reader.Close();
 
-                    if (status == "In Progress")
+                    if (status != "In Progress")
                     {
-                        // Update order status to Cancelled
-                        string updateQuery = "UPDATE Orders SET status = 'Cancelled' WHERE order_id = @orderId";
-                        SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
-                        updateCmd.Parameters.AddWithValue("@orderId", orderId);
-                        updateCmd.ExecuteNonQuery();
-
-                        // Insert into CancelledOrders with refund_status = 'Pending'
-                        string insertQuery = "INSERT INTO CancelledOrders (order_id, UserId, refund_status) VALUES (@orderId, @userId, 'Pending')";
-                        SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-                        insertCmd.Parameters.AddWithValue("@orderId", orderId);
-                        insertCmd.Parameters.AddWithValue("@userId", userId);
-                        insertCmd.ExecuteNonQuery();
-
-                        return true;
+                        conn.Close();
+                        return false; // Only 'In Progress' orders can be cancelled
                     }
+
+                    // Step 2: Get item price from Menu
+                    string priceQuery = "SELECT price FROM Menu WHERE item_id = @itemId";
+                    SqlCommand priceCmd = new SqlCommand(priceQuery, conn);
+                    priceCmd.Parameters.AddWithValue("@itemId", itemId);
+
+                    object result = priceCmd.ExecuteScalar();
+
+
+                    decimal amount = Convert.ToDecimal(result);
+
+                    // Step 3: Cancel the order
+                    string updateOrderQuery = "UPDATE Orders SET status = 'Cancelled' WHERE order_id = @orderId";
+                    SqlCommand updateCmd = new SqlCommand(updateOrderQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@orderId", orderId);
+                    updateCmd.ExecuteNonQuery();
+
+                    // Step 4: Insert refund request
+                    string insertRefundQuery = @"
+                INSERT INTO RefundRequests (UserId, order_id, Amount, Reason, Status)
+                VALUES (@userId, @orderId, @amount, @reason, 'Pending')";
+
+                    SqlCommand insertCmd = new SqlCommand(insertRefundQuery, conn);
+                    insertCmd.Parameters.AddWithValue("@userId", userId);
+                    insertCmd.Parameters.AddWithValue("@orderId", orderId);
+                    insertCmd.Parameters.AddWithValue("@amount", amount);
+                    insertCmd.Parameters.AddWithValue("@reason", reason);
+                    insertCmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    return true;
                 }
             }
 
-            return false;
-        }
-
-        // View refund status from CancelledOrders
-        public List<string> GetRefundStatus(int userId)
-        {
-            List<string> refunds = new List<string>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // View refund statuses
+            public List<string> GetRefundStatus(int userId)
             {
-                string query = @"
-                SELECT c.order_id, c.refund_status, o.item_id 
-                FROM CancelledOrders c 
-                JOIN Orders o ON c.order_id = o.order_id
-                WHERE c.UserId = @userId";
+                List<string> refunds = new List<string>();
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", userId);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    int orderId = Convert.ToInt32(reader["order_id"]);
-                    string refundStatus = reader["refund_status"].ToString();
-                    int itemId = Convert.ToInt32(reader["item_id"]);
-                    string itemName = DBHelper.GetItemNameFromDatabase(itemId);
+                    string query = @"
+                SELECT r.order_id, r.Status, r.Amount, r.Reason, o.item_id
+                FROM RefundRequests r
+                JOIN Orders o ON r.order_id = o.order_id
+                WHERE r.UserId = @userId";
 
-                    refunds.Add($"Order #{orderId} - {itemName} - Refund Status: {refundStatus}");
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int orderId = Convert.ToInt32(reader["order_id"]);
+                        string refundStatus = reader["Status"].ToString();
+                        decimal amount = Convert.ToDecimal(reader["Amount"]);
+                        string reason = reader["Reason"].ToString();
+                        int itemId = Convert.ToInt32(reader["item_id"]);
+                        string itemName = DBHelper.GetItemNameFromDatabase(itemId); // تفترض وجود دالة في DBHelper
+
+                        refunds.Add($"Order #{orderId} - {itemName} - Amount: RM {amount} - Reason: {reason} - Status: {refundStatus}");
+                    }
+
+                    conn.Close();
+                }
+
+                return refunds;
+            }
+        }
+
+        public class FeedbackManager
+        {
+            private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
+
+            public void SubmitFeedback(int userId, int orderId, string text)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"INSERT INTO Feedback 
+        (UserId, order_id, FeedbackText, respond, status, FeedbackDate) 
+        VALUES (@userId, @orderId, @text, NULL, @status, @date)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
+                    cmd.Parameters.AddWithValue("@text", text);
+                    cmd.Parameters.AddWithValue("@status", "New");
+                    cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+
+
+            }
+            public bool HasFeedback(int userId, int orderId)
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source = Abofares; Initial Catalog = C#;Integrated Security=True"))
+                {
+                    string query = "SELECT COUNT(*) FROM Feedback WHERE UserId = @userId AND order_id = @orderId";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
                 }
             }
-
-            return refunds;
         }
+
     }
-
-    public class FeedbackManager
-    {
-        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
-
-        public void SubmitFeedback(int userId, int orderId, string message)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "INSERT INTO Feedback (UserId, order_id, message, respond) VALUES (@userId, @orderId, @message, NULL)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", userId);
-                cmd.Parameters.AddWithValue("@orderId", orderId);
-                cmd.Parameters.AddWithValue("@message", message);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
-        public bool HasFeedback(int userId, int orderId)
-        {
-            using (SqlConnection conn = new SqlConnection("Data Source = Abofares; Initial Catalog = C#;Integrated Security=True"))
-            {
-                string query = "SELECT COUNT(*) FROM Feedback WHERE UserId = @userId AND order_id = @orderId";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", userId);
-                cmd.Parameters.AddWithValue("@orderId", orderId);
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
-            }
-        }
-    }
-
 }

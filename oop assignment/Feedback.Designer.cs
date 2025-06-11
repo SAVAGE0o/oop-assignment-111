@@ -52,6 +52,7 @@
             this.doneOrderList.Name = "doneOrderList";
             this.doneOrderList.Size = new System.Drawing.Size(332, 184);
             this.doneOrderList.TabIndex = 6;
+            this.doneOrderList.SelectedIndexChanged += new System.EventHandler(this.doneOrderList_SelectedIndexChanged);
             // 
             // feedbackTextBox
             // 

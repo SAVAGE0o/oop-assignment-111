@@ -8,37 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+using static oop_assignment.OrderManager;
+
 namespace oop_assignment
 {
     public partial class Orders : Form
     {
-
         OrderCancellationManager cancellationManager = new OrderCancellationManager();
         OrderManager orderManager = new OrderManager();
         int userId = CurrentSession.UserId;
 
+        private List<OrderInfo> currentOrders;
+
         public Orders()
         {
             InitializeComponent();
-            this.Load += new System.EventHandler(this.Orders_Load); 
+            this.Load += new System.EventHandler(this.Orders_Load);
         }
 
         private void Orders_Load(object sender, EventArgs e)
         {
-            LoadRunningOrders(); // method to load orders
-            LoadRefundStatus(); // method to load refund status
+            LoadRunningOrders(); 
+            LoadRefundStatus();   
         }
-
-
-       
-
-        private void returnButton_Click(object sender, EventArgs e)
-        {
-            new FormCustomerDashboard().Show();
-            this.Hide();
-        }
-
-        private List<OrderInfo> currentOrders;
 
         private void LoadRunningOrders()
         {
@@ -48,7 +42,7 @@ namespace oop_assignment
             foreach (var order in currentOrders)
             {
                 if (order.Status == "In Progress")
-                    runOrderList.Items.Add(order); // ToString() will be used
+                    runOrderList.Items.Add(order); 
             }
         }
 
@@ -62,33 +56,46 @@ namespace oop_assignment
             }
         }
 
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            new FormCustomerDashboard().Show();
+            this.Hide();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (runOrderList.SelectedIndex >= 0)
             {
                 OrderInfo selectedOrder = currentOrders[runOrderList.SelectedIndex];
-                bool success = cancellationManager.CancelOrder(selectedOrder.OrderId, userId);
+                string reason = cancelReasonText.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(reason))
+                {
+                    MessageBox.Show("Please enter a reason for cancellation.");
+                    return;
+                }
+
+                bool success = cancellationManager.CancelOrder(selectedOrder.OrderId, userId, reason);
 
                 if (success)
                 {
                     MessageBox.Show("Order cancelled and refund requested.");
 
-                    // Refresh the running orders list
                     LoadRunningOrders();
-
-                    // Immediately show updated refund status
                     LoadRefundStatus();
+                    cancelReasonText.Clear(); 
                 }
                 else
                 {
                     MessageBox.Show("Unable to cancel. Order may already be completed.");
                 }
             }
-
+            else
+            {
+                MessageBox.Show("Please select an order to cancel.");
+            }
         }
-
-
     }
 }
+
 
