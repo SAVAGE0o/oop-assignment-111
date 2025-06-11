@@ -92,6 +92,8 @@ namespace oop_assignment
                         orderManager.PlaceOrder(wallet.UserId, itemId, 1);
                     }
                     MessageBox.Show("All orders placed and payment successful.");
+                    new FormCustomerDashboard().Show();
+                    this.Hide();
                 }
                 else
                 {
