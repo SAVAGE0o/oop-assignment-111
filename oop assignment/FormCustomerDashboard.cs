@@ -26,8 +26,7 @@ namespace oop_assignment
 
         private void customerLogoutButton_Click(object sender, EventArgs e)
         {
-            Form FormLogin = new FormLogin();
-            FormLogin.Show();
+            
             this.Hide();
         }
 

@@ -21,7 +21,7 @@ namespace oop_assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+            Application.Run(new FormCustomerDashboard());
         }
     }
 
@@ -32,33 +32,28 @@ namespace oop_assignment
 
         private SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True");
 
-        public bool IsAvailable(string itemName)
+        // (availability = 'Yes')
+        public List<menuItems> GetAvailableItems()
         {
-            string query = "SELECT COUNT(*) FROM Menu WHERE item_name = @name AND availability = 'Yes'";
+            List<menuItems> availableItems = new List<menuItems>();
+            string query = "SELECT item_name, price FROM Menu WHERE availability = 'Yes'";
+
             SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@name", itemName);
-
             conn.Open();
-            int count = (int)cmd.ExecuteScalar();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                availableItems.Add(new menuItems
+                {
+                    Name = reader["item_name"].ToString(),
+                    Price = Convert.ToInt32(reader["price"])
+                });
+            }
+
             conn.Close();
-
-            return count > 0;
+            return availableItems;
         }
-
-        public int GetPrice(string itemName)
-        {
-            string query = "SELECT price FROM Menu WHERE item_name = @name";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@name", itemName);
-
-            conn.Open();
-            object result = cmd.ExecuteScalar();
-            conn.Close();
-
-            return result != null ? Convert.ToInt32(result) : 0;
-        }
-
-
     }
 
     // ✅ CurrentSession.cs
