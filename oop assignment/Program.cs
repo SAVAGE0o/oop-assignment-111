@@ -21,7 +21,7 @@ namespace oop_assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            
         }
     }
 
