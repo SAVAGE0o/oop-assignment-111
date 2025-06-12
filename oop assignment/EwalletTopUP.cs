@@ -86,10 +86,6 @@ namespace oop_assignment
                 {
                     MessageBox.Show("Error processing top-up: " + ex.Message);
                 }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                        conn.Close();
                 }
             }
         }
@@ -112,7 +108,6 @@ namespace oop_assignment
                 string query = "SELECT WalletBalance FROM Users WHERE UserId = @uid";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@uid", userId);
-
                 conn.Open();
                 object result = cmd.ExecuteScalar();
                 conn.Close();
@@ -130,12 +125,7 @@ namespace oop_assignment
             {
                 MessageBox.Show("Error retrieving balance: " + ex.Message);
             }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
             }
-
         }
 
         private void btnTopUp_Click(object sender, EventArgs e)
@@ -157,8 +147,6 @@ namespace oop_assignment
 
             try
             {
-                string updateQuery = "UPDATE Users SET WalletBalance = WalletBalance + @amount WHERE UserId = @uid";
-                SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
                 updateCmd.Parameters.AddWithValue("@amount", amount);
                 updateCmd.Parameters.AddWithValue("@uid", userId);
 
@@ -166,23 +154,9 @@ namespace oop_assignment
                 SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
                 insertCmd.Parameters.AddWithValue("@uid", userId);
                 insertCmd.Parameters.AddWithValue("@amount", amount);
-
-                conn.Open();
-                updateCmd.ExecuteNonQuery();
                 insertCmd.ExecuteNonQuery();
                 conn.Close();
 
-                MessageBox.Show("Top-up successful.");
-                txtAmount.Clear();
-                btnCheckBalance_Click(null, null); // Refresh balance
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error processing top-up: " + ex.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
         }

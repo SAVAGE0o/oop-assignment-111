@@ -11,9 +11,6 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class FormManagerRefundRQ : Form
-    {
-        private SqlConnection conn = new SqlConnection(@"Data Source=CYBORG\SQLEXPRESS;Initial Catalog=C#;Integrated Security=True");
 
         public FormManagerRefundRQ()
         {
@@ -50,16 +47,10 @@ namespace oop_assignment
 
             try
             {
-                // Update the status of the refund request
-                string updateQuery = "UPDATE RefundRequests SET Status = @status WHERE RefundId = @id";
-                SqlCommand cmd = new SqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@status", status);
                 cmd.Parameters.AddWithValue("@id", refundId);
-
-                conn.Open();
                 cmd.ExecuteNonQuery();
 
-                // If the refund is approved, process the wallet top-up
                 if (status == "Approved")
                 {
                     // Update wallet balance for the user
@@ -68,13 +59,6 @@ namespace oop_assignment
                     walletCmd.Parameters.AddWithValue("@amount", amount);
                     walletCmd.Parameters.AddWithValue("@uid", userId);
                     walletCmd.ExecuteNonQuery();
-
-                    // Log the top-up transaction in WalletTransactions table
-                    string logTransaction = "INSERT INTO WalletTransactions (UserId, Amount, Type, TransactionDate) VALUES (@uid, @amount, 'Topup', GETDATE())";
-                    SqlCommand transCmd = new SqlCommand(logTransaction, conn);
-                    transCmd.Parameters.AddWithValue("@uid", userId);
-                    transCmd.Parameters.AddWithValue("@amount", amount);
-                    transCmd.ExecuteNonQuery();
                 }
 
                 conn.Close();
