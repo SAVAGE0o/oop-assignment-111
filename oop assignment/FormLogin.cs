@@ -51,15 +51,7 @@ namespace oop_assignment
                         // Open the correct dashboard
                         switch (role)
                         {
-                            case "System Admin":
-                                new FormAdminDashboard().Show();
-                                break;
-                            case "Manager":
-                                new FormManagerDashboard().Show();
-                                break;
-                            case "Chef":
-                                new FormChefDashboard().Show();
-                                break;
+
                             case "Customer":
                                 new FormCustomerDashboard().Show();
                                 break;
