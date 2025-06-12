@@ -102,6 +102,7 @@
             this.Controls.Add(this.dgvUsers);
             this.Name = "FormDeleteUser";
             this.Text = "FormDeleteUser";
+            this.Load += new System.EventHandler(this.FormDeleteUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -57,5 +57,10 @@ namespace oop_assignment
         {
 
         }
+
+        private void FormAdminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

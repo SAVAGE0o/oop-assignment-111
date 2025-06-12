@@ -116,6 +116,7 @@
             this.Controls.Add(this.btnViewUsers);
             this.Name = "FormAdminDashboard";
             this.Text = "FormAdminDashboard";
+            this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
             this.ResumeLayout(false);
 
         }
