@@ -1,6 +1,6 @@
 ﻿namespace oop_assignment
 {
-    partial class Form222
+    partial class ProfileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form222";
+            this.Text = "ProfileForm";
         }
 
         #endregion

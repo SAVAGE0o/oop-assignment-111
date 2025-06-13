@@ -23,7 +23,7 @@ namespace oop_assignment
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            string connectionString = "Data Source=Abofares;Initial Catalog=SedapMakanDB;Integrated Security=True";
+            string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
