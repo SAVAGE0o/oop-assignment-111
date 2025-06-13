@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +12,9 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-    public partial class FormLogin: Form
+    public partial class FormLogin : Form
     {
+        private string managerId = "12345";
         public FormLogin()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace oop_assignment
                         }
                         else if (role == "Manager")
                         {
-                            new FormManagerDashboard().Show();
+                            new FormManagerDashboard(managerId).Show();
                             this.Hide();
                         }
                         else if (role == "Chef")
@@ -87,6 +89,10 @@ namespace oop_assignment
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
-

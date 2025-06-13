@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseHelper.cs" />
+    <Compile Include="EwalletTopUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EwalletTopUP.Designer.cs">
+      <DependentUpon>EwalletTopUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,18 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManagerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerDashboard.Designer.cs">
+      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerRefundRQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerRefundRQ.Designer.cs">
+      <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSelectUserToEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +124,18 @@
     </Compile>
     <Compile Include="ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFeedback.Designer.cs">
+      <DependentUpon>ManagerFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managersupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Managersupport.Designer.cs">
+      <DependentUpon>Managersupport.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuItems.cs" />
     <Compile Include="Order.cs" />
@@ -125,6 +155,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user.cs" />
     <Compile Include="usermanager.cs" />
+    <EmbeddedResource Include="EwalletTopUP.resx">
+      <DependentUpon>EwalletTopUP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +176,12 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerDashboard.resx">
+      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerRefundRQ.resx">
+      <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSelectUserToEdit.resx">
       <DependentUpon>FormSelectUserToEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFeedback.resx">
+      <DependentUpon>ManagerFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managersupport.resx">
+      <DependentUpon>Managersupport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
