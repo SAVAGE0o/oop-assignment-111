@@ -28,43 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
             this.doneOrderList = new System.Windows.Forms.ListBox();
             this.feedbackTextBox = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(283, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Completed Orders (Click for Feedback)";
-            // 
             // doneOrderList
             // 
             this.doneOrderList.FormattingEnabled = true;
             this.doneOrderList.ItemHeight = 20;
-            this.doneOrderList.Location = new System.Drawing.Point(59, 97);
+            this.doneOrderList.Location = new System.Drawing.Point(310, 287);
             this.doneOrderList.Name = "doneOrderList";
-            this.doneOrderList.Size = new System.Drawing.Size(332, 184);
+            this.doneOrderList.Size = new System.Drawing.Size(231, 144);
             this.doneOrderList.TabIndex = 6;
             this.doneOrderList.SelectedIndexChanged += new System.EventHandler(this.doneOrderList_SelectedIndexChanged);
             // 
             // feedbackTextBox
             // 
-            this.feedbackTextBox.Location = new System.Drawing.Point(433, 97);
+            this.feedbackTextBox.Location = new System.Drawing.Point(547, 287);
             this.feedbackTextBox.Name = "feedbackTextBox";
-            this.feedbackTextBox.Size = new System.Drawing.Size(326, 112);
+            this.feedbackTextBox.Size = new System.Drawing.Size(241, 83);
             this.feedbackTextBox.TabIndex = 10;
             this.feedbackTextBox.Text = "";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(433, 246);
+            this.button2.Location = new System.Drawing.Point(576, 396);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 35);
             this.button2.TabIndex = 11;
@@ -74,9 +64,9 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(651, 376);
+            this.returnButton.Location = new System.Drawing.Point(700, 396);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(108, 44);
+            this.returnButton.Size = new System.Drawing.Size(78, 35);
             this.returnButton.TabIndex = 12;
             this.returnButton.Text = "Return";
             this.returnButton.UseVisualStyleBackColor = true;
@@ -86,23 +76,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_13_102655;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.feedbackTextBox);
             this.Controls.Add(this.doneOrderList);
-            this.Controls.Add(this.label3);
+            this.DoubleBuffered = true;
             this.Name = "Feedback";
             this.Text = "Feedback";
             this.Load += new System.EventHandler(this.Feedback_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox doneOrderList;
         private System.Windows.Forms.RichTextBox feedbackTextBox;
         private System.Windows.Forms.Button button2;
