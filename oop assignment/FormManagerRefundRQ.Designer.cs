@@ -39,21 +39,21 @@
             // dgvRefunds
             // 
             this.dgvRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRefunds.Location = new System.Drawing.Point(159, 59);
-            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvRefunds.Location = new System.Drawing.Point(209, 45);
+            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvRefunds.Name = "dgvRefunds";
             this.dgvRefunds.RowTemplate.Height = 24;
-            this.dgvRefunds.Size = new System.Drawing.Size(368, 199);
+            this.dgvRefunds.Size = new System.Drawing.Size(276, 162);
             this.dgvRefunds.TabIndex = 0;
             this.dgvRefunds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rdoApprove
             // 
             this.rdoApprove.AutoSize = true;
-            this.rdoApprove.Location = new System.Drawing.Point(159, 263);
-            this.rdoApprove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdoApprove.Location = new System.Drawing.Point(218, 211);
+            this.rdoApprove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdoApprove.Name = "rdoApprove";
-            this.rdoApprove.Size = new System.Drawing.Size(77, 20);
+            this.rdoApprove.Size = new System.Drawing.Size(65, 17);
             this.rdoApprove.TabIndex = 1;
             this.rdoApprove.TabStop = true;
             this.rdoApprove.Text = "Approve";
@@ -62,10 +62,10 @@
             // rdoReject
             // 
             this.rdoReject.AutoSize = true;
-            this.rdoReject.Location = new System.Drawing.Point(159, 300);
-            this.rdoReject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdoReject.Location = new System.Drawing.Point(218, 246);
+            this.rdoReject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdoReject.Name = "rdoReject";
-            this.rdoReject.Size = new System.Drawing.Size(64, 20);
+            this.rdoReject.Size = new System.Drawing.Size(56, 17);
             this.rdoReject.TabIndex = 2;
             this.rdoReject.TabStop = true;
             this.rdoReject.Text = "Reject";
@@ -73,10 +73,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(279, 342);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(312, 264);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(107, 34);
+            this.btnSubmit.Size = new System.Drawing.Size(80, 28);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -84,9 +84,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(723, 417);
+            this.button1.Location = new System.Drawing.Point(542, 339);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.Size = new System.Drawing.Size(56, 26);
             this.button1.TabIndex = 4;
             this.button1.Text = "return";
             this.button1.UseVisualStyleBackColor = true;
@@ -94,15 +95,15 @@
             // 
             // FormManagerRefundRQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.rdoReject);
             this.Controls.Add(this.rdoApprove);
             this.Controls.Add(this.dgvRefunds);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormManagerRefundRQ";
             this.Text = "Refund Request";
             this.Load += new System.EventHandler(this.FormManagerRefundRQ_Load);

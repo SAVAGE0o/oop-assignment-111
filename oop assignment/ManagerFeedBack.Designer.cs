@@ -39,41 +39,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(15, 282);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Costumer Feedback";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvFeedBack
             // 
+            this.dgvFeedBack.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvFeedBack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFeedBack.Location = new System.Drawing.Point(96, 44);
-            this.dgvFeedBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvFeedBack.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvFeedBack.Location = new System.Drawing.Point(400, 65);
+            this.dgvFeedBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvFeedBack.Name = "dgvFeedBack";
             this.dgvFeedBack.RowHeadersWidth = 51;
             this.dgvFeedBack.RowTemplate.Height = 24;
-            this.dgvFeedBack.Size = new System.Drawing.Size(420, 172);
+            this.dgvFeedBack.Size = new System.Drawing.Size(560, 212);
             this.dgvFeedBack.TabIndex = 1;
             this.dgvFeedBack.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedBack_CellContentClick);
             // 
             // rtbResponses
             // 
-            this.rtbResponses.Location = new System.Drawing.Point(96, 221);
-            this.rtbResponses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbResponses.Location = new System.Drawing.Point(400, 283);
+            this.rtbResponses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbResponses.Name = "rtbResponses";
-            this.rtbResponses.Size = new System.Drawing.Size(311, 79);
+            this.rtbResponses.Size = new System.Drawing.Size(413, 96);
             this.rtbResponses.TabIndex = 2;
             this.rtbResponses.Text = "";
             this.rtbResponses.TextChanged += new System.EventHandler(this.txtResponses_TextChanged);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(424, 220);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(837, 282);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(92, 79);
+            this.btnSubmit.Size = new System.Drawing.Size(123, 97);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -81,14 +83,15 @@
             // 
             // ManagerFeedBack
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.BackColor = System.Drawing.Color.Peru;
+            this.ClientSize = new System.Drawing.Size(1023, 450);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.rtbResponses);
             this.Controls.Add(this.dgvFeedBack);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagerFeedBack";
             this.Text = "ManagerFeedBack";
             this.Load += new System.EventHandler(this.ManagerFeedBack_Load);

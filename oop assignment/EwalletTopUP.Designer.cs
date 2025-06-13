@@ -1,11 +1,8 @@
-﻿namespace oop_assignment
-{
-    partial class EwalletTopUP
-    {using System;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System;
 
 namespace oop_assignment
+{
+    partial class EwalletTopUP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +25,7 @@ namespace oop_assignment
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {

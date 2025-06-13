@@ -18,8 +18,10 @@ namespace oop_assignment
         {
             InitializeComponent();
             this.managerId = managerId;
+           
         }
 
+       
         private void button2_Click(object sender, EventArgs e)
         {
             new ManagerFeedBack(managerId).ShowDialog();
@@ -34,5 +36,13 @@ namespace oop_assignment
         {
             new Managersupport().ShowDialog();
         }
+
+        private void FormManagerDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        }
     }
-}
+
