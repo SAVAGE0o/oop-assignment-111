@@ -352,7 +352,7 @@ namespace oop_assignment
                         decimal amount = Convert.ToDecimal(reader["Amount"]);
                         string reason = reader["Reason"].ToString();
                         int itemId = Convert.ToInt32(reader["item_id"]);
-                        string itemName = DBHelper.GetItemNameFromDatabase(itemId); // تفترض وجود دالة في DBHelper
+                        string itemName = DBHelper.GetItemNameFromDatabase(itemId); 
 
                         refunds.Add($"Order #{orderId} - {itemName} - Amount: RM {amount} - Reason: {reason} - Status: {refundStatus}");
                     }
