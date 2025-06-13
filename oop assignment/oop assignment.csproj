@@ -89,12 +89,6 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManagerDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormManagerDashboard.Designer.cs">
-      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSelectUserToEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
