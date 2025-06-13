@@ -46,47 +46,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseHelper.cs" />
-    <Compile Include="EwalletTopUP.cs">
+    <Compile Include="Admin\DataBaseHelper.cs" />
+    <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EwalletTopUP.Designer.cs">
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customerClasses.cs" />
+    <Compile Include="customerOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerOrders.Designer.cs">
+      <DependentUpon>customerOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomerDashboard[.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerDashboard[.Designer.cs">
+      <DependentUpon>FormCustomerDashboard[.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\EwalletTopUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\EwalletTopUP.Designer.cs">
       <DependentUpon>EwalletTopUP.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddUser.cs">
+    <Compile Include="Admin\FormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddUser.Designer.cs">
+    <Compile Include="Admin\FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdminDashboard.cs">
+    <Compile Include="Admin\FormAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdminDashboard.Designer.cs">
+    <Compile Include="Admin\FormAdminDashboard.Designer.cs">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChefDashboard.cs">
+    <Compile Include="Admin\FormChefDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChefDashboard.Designer.cs">
+    <Compile Include="Admin\FormChefDashboard.Designer.cs">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomerDashboard.cs">
+    <Compile Include="Admin\FormDeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomerDashboard.Designer.cs">
-      <DependentUpon>FormCustomerDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeleteUser.Designer.cs">
+    <Compile Include="Admin\FormDeleteUser.Designer.cs">
       <DependentUpon>FormDeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditUser.cs">
+    <Compile Include="Admin\FormEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditUser.Designer.cs">
+    <Compile Include="Admin\FormEditUser.Designer.cs">
       <DependentUpon>FormEditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
@@ -95,55 +114,61 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManagerDashboard.cs">
+    <Compile Include="Manager\FormManagerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManagerDashboard.Designer.cs">
+    <Compile Include="Manager\FormManagerDashboard.Designer.cs">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManagerRefundRQ.cs">
+    <Compile Include="Manager\FormManagerRefundRQ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManagerRefundRQ.Designer.cs">
+    <Compile Include="Manager\FormManagerRefundRQ.Designer.cs">
       <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSelectUserToEdit.cs">
+    <Compile Include="Admin\FormSelectUserToEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSelectUserToEdit.Designer.cs">
+    <Compile Include="Admin\FormSelectUserToEdit.Designer.cs">
       <DependentUpon>FormSelectUserToEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormViewUsers.cs">
+    <Compile Include="Admin\FormViewUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormViewUsers.Designer.cs">
+    <Compile Include="Admin\FormViewUsers.Designer.cs">
       <DependentUpon>FormViewUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageMenu.cs">
+    <Compile Include="Chef\ManageMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageMenu.Designer.cs">
+    <Compile Include="Chef\ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFeedback.cs">
+    <Compile Include="Manager\ManagerFeedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerFeedback.Designer.cs">
+    <Compile Include="Manager\ManagerFeedback.Designer.cs">
       <DependentUpon>ManagerFeedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="Managersupport.cs">
+    <Compile Include="Manager\Managersupport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Managersupport.Designer.cs">
+    <Compile Include="Manager\Managersupport.Designer.cs">
       <DependentUpon>Managersupport.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuItems.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Orders.cs">
+    <Compile Include="Chef\MenuItems.cs" />
+    <Compile Include="Chef\Order.cs" />
+    <Compile Include="Chef\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Orders.Designer.cs">
+    <Compile Include="Chef\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
@@ -153,52 +178,67 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs" />
-    <Compile Include="usermanager.cs" />
-    <EmbeddedResource Include="EwalletTopUP.resx">
+    <Compile Include="Admin\user.cs" />
+    <Compile Include="Admin\usermanager.cs" />
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerOrders.resx">
+      <DependentUpon>customerOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerDashboard[.resx">
+      <DependentUpon>FormCustomerDashboard[.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\EwalletTopUP.resx">
       <DependentUpon>EwalletTopUP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddUser.resx">
+    <EmbeddedResource Include="Admin\FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdminDashboard.resx">
+    <EmbeddedResource Include="Admin\FormAdminDashboard.resx">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChefDashboard.resx">
+    <EmbeddedResource Include="Admin\FormChefDashboard.resx">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDeleteUser.resx">
+    <EmbeddedResource Include="Admin\FormDeleteUser.resx">
       <DependentUpon>FormDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditUser.resx">
+    <EmbeddedResource Include="Admin\FormEditUser.resx">
       <DependentUpon>FormEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManagerDashboard.resx">
+    <EmbeddedResource Include="Manager\FormManagerDashboard.resx">
       <DependentUpon>FormManagerDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManagerRefundRQ.resx">
+    <EmbeddedResource Include="Manager\FormManagerRefundRQ.resx">
       <DependentUpon>FormManagerRefundRQ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSelectUserToEdit.resx">
+    <EmbeddedResource Include="Admin\FormSelectUserToEdit.resx">
       <DependentUpon>FormSelectUserToEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormViewUsers.resx">
+    <EmbeddedResource Include="Admin\FormViewUsers.resx">
       <DependentUpon>FormViewUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageMenu.resx">
+    <EmbeddedResource Include="Chef\ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFeedback.resx">
+    <EmbeddedResource Include="Manager\ManagerFeedback.resx">
       <DependentUpon>ManagerFeedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Managersupport.resx">
+    <EmbeddedResource Include="Manager\Managersupport.resx">
       <DependentUpon>Managersupport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Orders.resx">
+    <EmbeddedResource Include="Chef\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,8 +262,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
