@@ -65,6 +65,12 @@
     <Compile Include="FormChefDashboard.Designer.cs">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerDashboard.Designer.cs">
+      <DependentUpon>FormCustomerDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,26 @@
     <Compile Include="FormViewUsers.Designer.cs">
       <DependentUpon>FormViewUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMenuForm.Designer.cs">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItems.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user.cs" />
@@ -110,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminDashboard.resx">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChefDashboard.resx">
+      <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDeleteUser.resx">
       <DependentUpon>FormDeleteUser.cs</DependentUpon>
@@ -125,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewUsers.resx">
       <DependentUpon>FormViewUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMenuForm.resx">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
