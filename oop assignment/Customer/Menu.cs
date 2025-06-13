@@ -67,7 +67,14 @@ namespace oop_assignment
             LoadAvailableMenuItems();
 
         }
-        private void listBoxMenu_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void customerMenuList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (menuList.SelectedItem != null)
             {
@@ -96,6 +103,5 @@ namespace oop_assignment
                 }
             }
         }
-
     }
 }

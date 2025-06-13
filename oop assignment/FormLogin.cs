@@ -15,6 +15,7 @@ namespace oop_assignment
     public partial class FormLogin : Form
     {
         private string managerId = "12345";
+        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
         public FormLogin()
         {
             InitializeComponent();
@@ -25,7 +26,11 @@ namespace oop_assignment
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                lblMessage.Text = "Please enter both email and password.";
+                return;
+            }
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -33,45 +38,49 @@ namespace oop_assignment
                 {
                     conn.Open();
 
-                    string query = "SELECT Role FROM Users WHERE Email = @Email AND Password = @Password";
+                    string query = "SELECT UserId, Username, Email, Role FROM Users WHERE Email = @Email AND Password = @Password";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Password", password);
 
-                    object result = cmd.ExecuteScalar();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (result != null)
+                    if (reader.Read())
                     {
-                        string role = result.ToString();
+                        // ✅ حفظ بيانات الجلسة
+                        CurrentSession.UserId = Convert.ToInt32(reader["UserId"]);
+                        CurrentSession.Username = reader["Username"].ToString();
+                        CurrentSession.Email = reader["Email"].ToString();
+                        string role = reader["Role"].ToString();
 
-                        // ✅ Show simple message box
                         MessageBox.Show("Login successful! Role: " + role);
 
-                        // ✅ Open the correct form
-                        if (role == "System Admin")
+                        // ✅ فتح الفورم المناسب حسب الدور
+                        switch (role)
                         {
-                            new FormAdminDashboard().Show();
-                            this.Hide();
+                            case "System Admin":
+                                new FormAdminDashboard().Show();
+                                break;
+
+                            case "Manager":
+                               
+                                new FormManagerDashboard(managerId).Show();
+                                break;
+
+                            case "Chef":
+                                new FormChefDashboard().Show();
+                                break;
+
+                            case "Customer":
+                                new FormCustomerDashboard().Show();
+                                break;
+
+                            default:
+                                MessageBox.Show("Unknown role: " + role);
+                                return;
                         }
-                        else if (role == "Manager")
-                        {
-                            new FormManagerDashboard(managerId).Show();
-                            this.Hide();
-                        }
-                        else if (role == "Chef")
-                        {
-                            new FormChefDashboard().Show();
-                            this.Hide();
-                        }
-                        else if (role == "Customer")
-                        {
-                            new FormCustomerDashboard().Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Unknown role: " + role);
-                        }
+
+                        this.Hide(); // إخفاء فورم تسجيل الدخول بعد النجاح
                     }
                     else
                     {

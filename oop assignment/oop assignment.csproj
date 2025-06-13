@@ -47,29 +47,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\DataBaseHelper.cs" />
-    <Compile Include="Checkout.cs">
+    <Compile Include="Customer\Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Checkout.Designer.cs">
+    <Compile Include="Customer\Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="customerClasses.cs" />
-    <Compile Include="customerOrders.cs">
+    <Compile Include="Customer\customerClasses.cs" />
+    <Compile Include="Customer\customerOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customerOrders.Designer.cs">
+    <Compile Include="Customer\customerOrders.Designer.cs">
       <DependentUpon>customerOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Feedback.cs">
+    <Compile Include="Customer\Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Feedback.Designer.cs">
+    <Compile Include="Customer\Feedback.Designer.cs">
       <DependentUpon>Feedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomerDashboard[.cs">
+    <Compile Include="Customer\FormCustomerDashboard[.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomerDashboard[.Designer.cs">
+    <Compile Include="Customer\FormCustomerDashboard[.Designer.cs">
       <DependentUpon>FormCustomerDashboard[.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\EwalletTopUP.cs">
@@ -164,10 +164,10 @@
     <Compile Include="Chef\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Customer\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Customer\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="ProfileForm.cs">
@@ -180,16 +180,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\user.cs" />
     <Compile Include="Admin\usermanager.cs" />
-    <EmbeddedResource Include="Checkout.resx">
+    <EmbeddedResource Include="Customer\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customerOrders.resx">
+    <EmbeddedResource Include="Customer\customerOrders.resx">
       <DependentUpon>customerOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Feedback.resx">
+    <EmbeddedResource Include="Customer\Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomerDashboard[.resx">
+    <EmbeddedResource Include="Customer\FormCustomerDashboard[.resx">
       <DependentUpon>FormCustomerDashboard[.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\EwalletTopUP.resx">
@@ -237,7 +237,7 @@
     <EmbeddedResource Include="Chef\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Customer\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

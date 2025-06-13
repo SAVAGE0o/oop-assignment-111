@@ -52,14 +52,21 @@ namespace oop_assignment
         public void Checkout_Load(object sender, EventArgs e)
         {
 
-            try
+            if (CurrentSession.UserId > 0)
             {
-                UserWallet wallet = new UserWallet(CurrentSession.UserId);
-                customerBalance.Text = wallet.Balance.ToString("C");
+                try
+                {
+                    UserWallet wallet = new UserWallet(CurrentSession.UserId);
+                    customerBalance.Text = wallet.Balance.ToString("C"); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading wallet balance: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error refreshing balance: " + ex.Message);
+                MessageBox.Show("No user session found. Please login first.");
             }
 
 
