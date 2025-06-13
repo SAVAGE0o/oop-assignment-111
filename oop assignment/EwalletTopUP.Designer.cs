@@ -1,6 +1,11 @@
 ﻿namespace oop_assignment
 {
     partial class EwalletTopUP
+    {using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+namespace oop_assignment
     {
         /// <summary>
         /// Required designer variable.
@@ -159,5 +164,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        
+
+
     }
 }
