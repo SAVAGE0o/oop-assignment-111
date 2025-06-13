@@ -119,5 +119,23 @@
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-06-09 181429.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 093534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 0935341.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 094645.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 0946451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 100200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
