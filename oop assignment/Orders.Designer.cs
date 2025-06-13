@@ -40,6 +40,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Peru;
             this.panel1.Controls.Add(this.buttonGoback);
             this.panel1.Controls.Add(this.cmbStatus);
             this.panel1.Controls.Add(this.dataGridViewOrders);
@@ -53,6 +54,7 @@
             // 
             // buttonGoback
             // 
+            this.buttonGoback.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.buttonGoback.Location = new System.Drawing.Point(23, 395);
             this.buttonGoback.Name = "buttonGoback";
             this.buttonGoback.Size = new System.Drawing.Size(127, 29);
@@ -63,6 +65,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "All",
@@ -71,7 +74,7 @@
             "Cancelled"});
             this.cmbStatus.Location = new System.Drawing.Point(254, 177);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(121, 28);
+            this.cmbStatus.Size = new System.Drawing.Size(121, 27);
             this.cmbStatus.TabIndex = 3;
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
@@ -83,12 +86,13 @@
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.RowHeadersWidth = 62;
             this.dataGridViewOrders.RowTemplate.Height = 28;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(485, 312);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(563, 312);
             this.dataGridViewOrders.TabIndex = 2;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
             // 
             // btnUpdateStatus
             // 
+            this.btnUpdateStatus.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.btnUpdateStatus.Location = new System.Drawing.Point(77, 290);
             this.btnUpdateStatus.Name = "btnUpdateStatus";
             this.btnUpdateStatus.Size = new System.Drawing.Size(157, 42);
@@ -99,6 +103,7 @@
             // 
             // btnViewOrders
             // 
+            this.btnViewOrders.Font = new System.Drawing.Font("Cooper Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewOrders.Location = new System.Drawing.Point(77, 230);
             this.btnViewOrders.Name = "btnViewOrders";
             this.btnViewOrders.Size = new System.Drawing.Size(157, 39);

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using oop_assignment.Models;
+
 
 namespace oop_assignment
 {
@@ -42,6 +44,16 @@ namespace oop_assignment
         {
             ProfileForm profileForm = new ProfileForm();
             profileForm.Show();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

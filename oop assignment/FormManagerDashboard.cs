@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Windows.Forms;
+using oop_assignment.Models;
+
 
 
 namespace oop_assignment
@@ -56,21 +58,16 @@ namespace oop_assignment
                 return; // Exit the method or function
             }
 
-            // 3. احصل على حالة التوفر من الـ checkbox
             bool available = chkAvailable.Checked;
 
-            // 4. سلسلة الاتصال
             string connectionString = "Data Source=desktop-euek254;Initial Catalog=C#;Integrated Security=True";
 
-            // 5. استعلام الإدخال
             string query = "INSERT INTO Menu (item_name, price, availability) VALUES (@name, @price, @available)";
 
-            // 6. تنفيذ الاستعلام باستخدام SqlConnection و SqlCommand
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
 
-                // ✨ المهم: إرسال القيم، وليس عناصر التحكم
                 cmd.Parameters.AddWithValue("@name", itemName);
                 cmd.Parameters.AddWithValue("@price", price);
                 cmd.Parameters.AddWithValue("@available", available);
@@ -79,10 +76,16 @@ namespace oop_assignment
                 cmd.ExecuteNonQuery();
             }
 
-            // 7. تحديث الداتا غريد
             LoadMenuItems();
 
             MessageBox.Show("Item added successfully.");
+
+            MenuItem item = new MenuItem
+            {
+                ItemName = txtItemName.Text.Trim(),
+                Price = decimal.Parse(numericUpDownPrice.Text),
+                Available = chkAvailable.Checked
+            };
         }
 
 
@@ -192,14 +195,27 @@ namespace oop_assignment
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
+
+                dt.Columns.Add("AvailabilityText", typeof(string));
+
                 foreach (DataRow row in dt.Rows)
                 {
-                    row["availability"] = (Convert.ToBoolean(row["availability"])) ? "Yes" : "No";
+                    string rawValue = row["availability"].ToString().Trim();
+
+                    bool isAvailable = rawValue == "1";
+
+                    row["AvailabilityText"] = isAvailable ? "Yes" : "No";
                 }
 
+
+
                 dataGridView1.DataSource = dt;
+
+                if (dataGridView1.Columns.Contains("availability"))
+                    dataGridView1.Columns["availability"].Visible = false;
             }
         }
+
 
 
         private void btnDelete_Click(object sender, EventArgs e)

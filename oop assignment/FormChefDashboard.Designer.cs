@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChefDashboard));
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnManageMenu = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
             // 
-            this.panelSidebar.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelSidebar.BackColor = System.Drawing.Color.Brown;
+            this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.btnLogout);
             this.panelSidebar.Controls.Add(this.btnOrders);
             this.panelSidebar.Controls.Add(this.btnManageMenu);
@@ -51,57 +55,84 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnLogout.Location = new System.Drawing.Point(0, 396);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(200, 54);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnOrders
             // 
+            this.btnOrders.BackColor = System.Drawing.Color.White;
             this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrders.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.btnOrders.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnOrders.Location = new System.Drawing.Point(0, 112);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(200, 54);
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "Orders";
-            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnManageMenu
             // 
+            this.btnManageMenu.BackColor = System.Drawing.Color.White;
             this.btnManageMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageMenu.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.btnManageMenu.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnManageMenu.Location = new System.Drawing.Point(0, 50);
             this.btnManageMenu.Name = "btnManageMenu";
             this.btnManageMenu.Size = new System.Drawing.Size(200, 62);
             this.btnManageMenu.TabIndex = 1;
             this.btnManageMenu.Text = "Manage Menu\t";
-            this.btnManageMenu.UseVisualStyleBackColor = true;
+            this.btnManageMenu.UseVisualStyleBackColor = false;
             this.btnManageMenu.Click += new System.EventHandler(this.btnManageMenu_Click);
             // 
             // btnProfile
             // 
+            this.btnProfile.BackColor = System.Drawing.Color.White;
             this.btnProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProfile.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.btnProfile.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnProfile.Location = new System.Drawing.Point(0, 0);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(200, 50);
             this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 166);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 230);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormChefDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelSidebar);
             this.Name = "FormChefDashboard";
             this.Text = "FormChefDashboard";
             this.panelSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,6 +147,6 @@
         private System.Windows.Forms.Button panelManageMenu;
         private System.Windows.Forms.Button panelOrders;
         private System.Windows.Forms.TextBox numPrice;
-
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

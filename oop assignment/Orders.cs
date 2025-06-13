@@ -64,13 +64,6 @@ namespace oop_assignment
                
         }
 
-        public class Order
-        {
-            public int OrderId { get; set; }
-            public int UserId { get; set; }
-            public string Status { get; set; }
-        }
-
 
         private void btnUpdateStatus_Click(object sender, EventArgs e)
         {

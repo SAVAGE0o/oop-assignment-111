@@ -37,7 +37,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._C_DataSet = new oop_assignment._C_DataSet();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Goback = new System.Windows.Forms.Button();
             this.itemname = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.numericUpDownPrice = new System.Windows.Forms.TextBox();
@@ -57,16 +57,19 @@
             // chkAvailable
             // 
             this.chkAvailable.AutoSize = true;
+            this.chkAvailable.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.chkAvailable.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.chkAvailable.Location = new System.Drawing.Point(408, 45);
             this.chkAvailable.Name = "chkAvailable";
-            this.chkAvailable.Size = new System.Drawing.Size(105, 24);
+            this.chkAvailable.Size = new System.Drawing.Size(133, 23);
             this.chkAvailable.TabIndex = 2;
-            this.chkAvailable.Text = "availability";
+            this.chkAvailable.Text = "Availability";
             this.chkAvailable.UseVisualStyleBackColor = true;
             this.chkAvailable.CheckedChanged += new System.EventHandler(this.chkAvailable_CheckedChanged);
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.btnAdd.Location = new System.Drawing.Point(18, 85);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 35);
@@ -77,6 +80,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.btnEdit.Location = new System.Drawing.Point(219, 85);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(113, 35);
@@ -87,6 +91,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Cooper Black", 8F);
             this.btnDelete.Location = new System.Drawing.Point(408, 85);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 35);
@@ -97,6 +102,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.Location = new System.Drawing.Point(142, 149);
@@ -117,31 +123,36 @@
             this._C_DataSet.DataSetName = "_C_DataSet";
             this._C_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
+            // Goback
             // 
-            this.button1.Location = new System.Drawing.Point(12, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 44);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Go back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Goback.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.Goback.Location = new System.Drawing.Point(12, 366);
+            this.Goback.Name = "Goback";
+            this.Goback.Size = new System.Drawing.Size(114, 44);
+            this.Goback.TabIndex = 8;
+            this.Goback.Text = "Go back";
+            this.Goback.UseVisualStyleBackColor = true;
+            this.Goback.Click += new System.EventHandler(this.button1_Click);
             // 
             // itemname
             // 
             this.itemname.AutoSize = true;
+            this.itemname.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.itemname.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.itemname.Location = new System.Drawing.Point(20, 16);
             this.itemname.Name = "itemname";
-            this.itemname.Size = new System.Drawing.Size(87, 20);
+            this.itemname.Size = new System.Drawing.Size(95, 19);
             this.itemname.TabIndex = 9;
             this.itemname.Text = "Item Name";
             // 
             // Price
             // 
             this.Price.AutoSize = true;
+            this.Price.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.Price.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Price.Location = new System.Drawing.Point(212, 16);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(44, 20);
+            this.Price.Size = new System.Drawing.Size(51, 19);
             this.Price.TabIndex = 11;
             this.Price.Text = "Price";
             // 
@@ -157,11 +168,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(780, 450);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.numericUpDownPrice);
             this.Controls.Add(this.itemname);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Goback);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -187,7 +199,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Goback;
         private System.Windows.Forms.BindingSource cDataSetBindingSource;
         private _C_DataSet _C_DataSet;
         private System.Windows.Forms.Label itemname;
