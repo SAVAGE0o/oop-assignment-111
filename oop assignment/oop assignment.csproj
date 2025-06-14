@@ -53,11 +53,11 @@
     <Compile Include="FormChefDashboard.Designer.cs">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManagerDashboard.cs">
+    <Compile Include="ManageMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManagerDashboard.Designer.cs">
-      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    <Compile Include="ManageMenuForm.Designer.cs">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage Menu.cs">
       <SubType>Form</SubType>
@@ -89,8 +89,8 @@
     <EmbeddedResource Include="FormChefDashboard.resx">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManagerDashboard.resx">
-      <DependentUpon>FormManagerDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="ManageMenuForm.resx">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage Menu.resx">
       <DependentUpon>Manage Menu.cs</DependentUpon>

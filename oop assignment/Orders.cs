@@ -122,46 +122,14 @@ namespace oop_assignment
 
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadOrders();
 
         }
-        private void LoadOrders()
-       {
-        //    string connectionString = "Data Source=desktop-euek254;Initial Catalog=C#;Integrated Security=True";
-        //    string selectedStatus = cmbStatus.SelectedItem?.ToString() ?? "All";
-
-        //    string query = "SELECT * FROM Orders";
-        //    if (selectedStatus != "All")
-        //    {
-        //        query += " WHERE status = @status";
-        //    }
-
-        //    try
-        //    {
-        //        using (SqlConnection conn = new SqlConnection(connectionString))
-        //        {
-        //            SqlDataAdapter da = new SqlDataAdapter(query, conn);
-        //            if (selectedStatus != "All")
-        //            {
-        //                da.SelectCommand.Parameters.AddWithValue("@status", selectedStatus);
-        //            }
-
-        //            DataTable dt = new DataTable();
-        //            da.Fill(dt);
-        //            dataGridViewOrders.DataSource = dt;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        }
+      
 
         private void Orders_Load(object sender, EventArgs e)
         {
             cmbStatus.SelectedIndex = 0;
 
-            LoadOrders(); 
         }
     }
 }

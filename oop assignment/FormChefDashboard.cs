@@ -55,5 +55,10 @@ namespace oop_assignment
         {
 
         }
+
+        private void FormChefDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
