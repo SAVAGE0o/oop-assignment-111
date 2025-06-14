@@ -28,39 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(290, 26);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(208, 25);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "All Registered Users";
-            // 
             // dgvUsers
             // 
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(206, 84);
+            this.dgvUsers.Location = new System.Drawing.Point(371, 188);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(431, 274);
+            this.dgvUsers.Size = new System.Drawing.Size(485, 342);
             this.dgvUsers.TabIndex = 1;
             // 
             // btnLoad
             // 
-            this.btnLoad.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLoad.Location = new System.Drawing.Point(95, 173);
+            this.btnLoad.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnLoad.Location = new System.Drawing.Point(385, 139);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.Size = new System.Drawing.Size(122, 29);
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "Load Users";
             this.btnLoad.UseVisualStyleBackColor = false;
@@ -68,10 +60,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(95, 215);
+            this.btnClose.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnClose.Location = new System.Drawing.Point(655, 139);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(84, 29);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Return";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -79,26 +72,25 @@
             // 
             // FormViewUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_15_0016392;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvUsers);
-            this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormViewUsers";
             this.Text = "FormViewUsers";
             this.Load += new System.EventHandler(this.FormViewUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnClose;

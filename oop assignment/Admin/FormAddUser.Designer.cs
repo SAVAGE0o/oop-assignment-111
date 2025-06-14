@@ -40,59 +40,65 @@
             this.txtWallet = new System.Windows.Forms.TextBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(97, 104);
+            this.lblUsername.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblUsername.Location = new System.Drawing.Point(387, 142);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(73, 16);
+            this.lblUsername.Size = new System.Drawing.Size(87, 20);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(100, 164);
+            this.lblEmail.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblEmail.Location = new System.Drawing.Point(387, 218);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(52, 20);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email:";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(100, 218);
+            this.lblPassword.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblPassword.Location = new System.Drawing.Point(390, 302);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(70, 16);
+            this.lblPassword.Size = new System.Drawing.Size(82, 20);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password:";
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.DarkOrange;
             this.txtUsername.FormattingEnabled = true;
-            this.txtUsername.Location = new System.Drawing.Point(243, 96);
+            this.txtUsername.Location = new System.Drawing.Point(494, 139);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(121, 24);
+            this.txtUsername.Size = new System.Drawing.Size(174, 28);
             this.txtUsername.TabIndex = 3;
             // 
             // lblWallet
             // 
             this.lblWallet.AutoSize = true;
-            this.lblWallet.Location = new System.Drawing.Point(97, 272);
+            this.lblWallet.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblWallet.Location = new System.Drawing.Point(387, 381);
             this.lblWallet.Name = "lblWallet";
-            this.lblWallet.Size = new System.Drawing.Size(101, 16);
+            this.lblWallet.Size = new System.Drawing.Size(119, 20);
             this.lblWallet.TabIndex = 4;
             this.lblWallet.Text = "Wallet Balance:";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(533, 290);
+            this.btnSave.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnSave.Location = new System.Drawing.Point(690, 462);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(84, 29);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -100,10 +106,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(533, 333);
+            this.btnCancel.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCancel.Location = new System.Drawing.Point(690, 511);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(84, 29);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Return";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -111,59 +118,59 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(243, 158);
+            this.txtEmail.BackColor = System.Drawing.Color.DarkOrange;
+            this.txtEmail.Location = new System.Drawing.Point(450, 218);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(112, 26);
             this.txtEmail.TabIndex = 7;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(243, 212);
+            this.txtPassword.BackColor = System.Drawing.Color.DarkOrange;
+            this.txtPassword.Location = new System.Drawing.Point(466, 299);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(112, 26);
             this.txtPassword.TabIndex = 8;
             // 
             // txtWallet
             // 
-            this.txtWallet.Location = new System.Drawing.Point(243, 266);
+            this.txtWallet.BackColor = System.Drawing.Color.DarkOrange;
+            this.txtWallet.Location = new System.Drawing.Point(507, 378);
+            this.txtWallet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWallet.Name = "txtWallet";
-            this.txtWallet.Size = new System.Drawing.Size(100, 22);
+            this.txtWallet.Size = new System.Drawing.Size(112, 26);
             this.txtWallet.TabIndex = 9;
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(97, 323);
+            this.lblRole.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblRole.Location = new System.Drawing.Point(387, 451);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(39, 16);
+            this.lblRole.Size = new System.Drawing.Size(46, 20);
             this.lblRole.TabIndex = 10;
             this.lblRole.Text = "Role:";
             // 
             // cmbRole
             // 
+            this.cmbRole.BackColor = System.Drawing.Color.DarkOrange;
             this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Location = new System.Drawing.Point(243, 315);
+            this.cmbRole.Location = new System.Drawing.Point(442, 448);
+            this.cmbRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(121, 24);
+            this.cmbRole.Size = new System.Drawing.Size(136, 28);
             this.cmbRole.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(309, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Add User";
             // 
             // FormAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_15_000605;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.txtWallet);
@@ -176,6 +183,8 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblUsername);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAddUser";
             this.Text = "FormAddUser";
             this.Load += new System.EventHandler(this.FormAddUser_Load);
@@ -198,6 +207,5 @@
         private System.Windows.Forms.TextBox txtWallet;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.ComboBox cmbRole;
-        private System.Windows.Forms.Label label1;
     }
 }

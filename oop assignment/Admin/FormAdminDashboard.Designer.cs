@@ -33,14 +33,13 @@
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnViewUsers
             // 
-            this.btnViewUsers.BackColor = System.Drawing.SystemColors.Control;
-            this.btnViewUsers.Location = new System.Drawing.Point(79, 184);
+            this.btnViewUsers.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnViewUsers.Location = new System.Drawing.Point(382, 115);
             this.btnViewUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewUsers.Name = "btnViewUsers";
             this.btnViewUsers.Size = new System.Drawing.Size(115, 29);
@@ -51,8 +50,8 @@
             // 
             // btnAddUser
             // 
-            this.btnAddUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAddUser.Location = new System.Drawing.Point(79, 246);
+            this.btnAddUser.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnAddUser.Location = new System.Drawing.Point(382, 205);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(115, 29);
@@ -63,8 +62,8 @@
             // 
             // btnEditUser
             // 
-            this.btnEditUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEditUser.Location = new System.Drawing.Point(79, 300);
+            this.btnEditUser.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnEditUser.Location = new System.Drawing.Point(382, 298);
             this.btnEditUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(115, 29);
@@ -75,8 +74,8 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteUser.Location = new System.Drawing.Point(79, 363);
+            this.btnDeleteUser.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnDeleteUser.Location = new System.Drawing.Point(382, 379);
             this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(115, 29);
@@ -87,8 +86,8 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.Location = new System.Drawing.Point(79, 418);
+            this.btnLogout.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnLogout.Location = new System.Drawing.Point(734, 504);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(115, 29);
@@ -97,21 +96,10 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 68);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Admin Form";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(79, 133);
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Location = new System.Drawing.Point(711, 49);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 29);
@@ -124,10 +112,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Peru;
+            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_15_000848;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEditUser);
@@ -148,7 +137,6 @@
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
     }
 }

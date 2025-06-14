@@ -32,26 +32,28 @@
             this.btnLoadUsers = new System.Windows.Forms.Button();
             this.btnEditSelected = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
             // 
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(221, 75);
+            this.dgvUsers.Location = new System.Drawing.Point(361, 144);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(392, 275);
+            this.dgvUsers.Size = new System.Drawing.Size(492, 322);
             this.dgvUsers.TabIndex = 0;
             // 
             // btnLoadUsers
             // 
-            this.btnLoadUsers.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLoadUsers.Location = new System.Drawing.Point(78, 142);
+            this.btnLoadUsers.BackColor = System.Drawing.Color.Orange;
+            this.btnLoadUsers.Location = new System.Drawing.Point(382, 104);
+            this.btnLoadUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoadUsers.Name = "btnLoadUsers";
-            this.btnLoadUsers.Size = new System.Drawing.Size(92, 23);
+            this.btnLoadUsers.Size = new System.Drawing.Size(104, 29);
             this.btnLoadUsers.TabIndex = 1;
             this.btnLoadUsers.Text = "Load Users";
             this.btnLoadUsers.UseVisualStyleBackColor = false;
@@ -59,10 +61,11 @@
             // 
             // btnEditSelected
             // 
-            this.btnEditSelected.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEditSelected.Location = new System.Drawing.Point(78, 197);
+            this.btnEditSelected.BackColor = System.Drawing.Color.Orange;
+            this.btnEditSelected.Location = new System.Drawing.Point(620, 103);
+            this.btnEditSelected.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditSelected.Name = "btnEditSelected";
-            this.btnEditSelected.Size = new System.Drawing.Size(92, 23);
+            this.btnEditSelected.Size = new System.Drawing.Size(104, 29);
             this.btnEditSelected.TabIndex = 2;
             this.btnEditSelected.Text = "Edit Selected";
             this.btnEditSelected.UseVisualStyleBackColor = false;
@@ -70,42 +73,35 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(78, 251);
+            this.btnCancel.BackColor = System.Drawing.Color.Orange;
+            this.btnCancel.Location = new System.Drawing.Point(706, 474);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 23);
+            this.btnCancel.Size = new System.Drawing.Size(104, 38);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Return";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(342, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Select User";
-            // 
             // FormSelectUserToEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_15_002300;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditSelected);
             this.Controls.Add(this.btnLoadUsers);
             this.Controls.Add(this.dgvUsers);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSelectUserToEdit";
             this.Text = "FormSelectUserToEdit";
             this.Load += new System.EventHandler(this.FormSelectUserToEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -115,6 +111,5 @@
         private System.Windows.Forms.Button btnLoadUsers;
         private System.Windows.Forms.Button btnEditSelected;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label1;
     }
 }
