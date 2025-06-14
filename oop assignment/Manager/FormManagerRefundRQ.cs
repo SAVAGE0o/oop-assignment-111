@@ -8,7 +8,7 @@ namespace oop_assignment
     public partial class FormManagerRefundRQ : Form
     {
         private readonly RefundService service; // Instance of the RefundService class to interact with the database
-        private SqlConnection conn = new SqlConnection(@"Data Source=CYBORG\SQLEXPRESS;Initial Catalog=C#;Integrated Security=True"); // Connection string for the database
+        private SqlConnection conn = new SqlConnection(@"Data Source=Abofares;Initial Catalog=C#;Integrated Security=True"); // Connection string for the database
 
         // Constructor to initialize the form and set up the RefundService
         public FormManagerRefundRQ()
