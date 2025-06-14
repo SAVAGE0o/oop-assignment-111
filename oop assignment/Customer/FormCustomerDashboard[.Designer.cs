@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customerProfile = new System.Windows.Forms.Button();
+            this.profileButton = new System.Windows.Forms.Button();
             this.customerMenuButton = new System.Windows.Forms.Button();
-            this.customerSupportButton = new System.Windows.Forms.Button();
+            this.customerOrdersButton = new System.Windows.Forms.Button();
             this.customerFeedbackButton = new System.Windows.Forms.Button();
             this.customerLogoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // customerProfile
+            // profileButton
             // 
-            this.customerProfile.BackColor = System.Drawing.Color.Orange;
-            this.customerProfile.Location = new System.Drawing.Point(305, 74);
-            this.customerProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.customerProfile.Name = "customerProfile";
-            this.customerProfile.Size = new System.Drawing.Size(140, 38);
-            this.customerProfile.TabIndex = 1;
-            this.customerProfile.Text = "Profile";
-            this.customerProfile.UseVisualStyleBackColor = false;
+            this.profileButton.BackColor = System.Drawing.Color.Orange;
+            this.profileButton.Location = new System.Drawing.Point(305, 74);
+            this.profileButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profileButton.Name = "profileButton";
+            this.profileButton.Size = new System.Drawing.Size(140, 38);
+            this.profileButton.TabIndex = 1;
+            this.profileButton.Text = "Profile";
+            this.profileButton.UseVisualStyleBackColor = false;
             // 
             // customerMenuButton
             // 
@@ -58,17 +58,17 @@
             this.customerMenuButton.UseVisualStyleBackColor = false;
             this.customerMenuButton.Click += new System.EventHandler(this.customerMenuButton_Click);
             // 
-            // customerSupportButton
+            // customerOrdersButton
             // 
-            this.customerSupportButton.BackColor = System.Drawing.Color.Orange;
-            this.customerSupportButton.Location = new System.Drawing.Point(305, 200);
-            this.customerSupportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.customerSupportButton.Name = "customerSupportButton";
-            this.customerSupportButton.Size = new System.Drawing.Size(140, 40);
-            this.customerSupportButton.TabIndex = 4;
-            this.customerSupportButton.Text = "Running Orders";
-            this.customerSupportButton.UseVisualStyleBackColor = false;
-            this.customerSupportButton.Click += new System.EventHandler(this.customerSupportButton_Click);
+            this.customerOrdersButton.BackColor = System.Drawing.Color.Orange;
+            this.customerOrdersButton.Location = new System.Drawing.Point(305, 200);
+            this.customerOrdersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.customerOrdersButton.Name = "customerOrdersButton";
+            this.customerOrdersButton.Size = new System.Drawing.Size(140, 40);
+            this.customerOrdersButton.TabIndex = 4;
+            this.customerOrdersButton.Text = "Running Orders";
+            this.customerOrdersButton.UseVisualStyleBackColor = false;
+            this.customerOrdersButton.Click += new System.EventHandler(this.customerSupportButton_Click);
             // 
             // customerFeedbackButton
             // 
@@ -103,9 +103,9 @@
             this.ClientSize = new System.Drawing.Size(637, 394);
             this.Controls.Add(this.customerLogoutButton);
             this.Controls.Add(this.customerFeedbackButton);
-            this.Controls.Add(this.customerSupportButton);
+            this.Controls.Add(this.customerOrdersButton);
             this.Controls.Add(this.customerMenuButton);
-            this.Controls.Add(this.customerProfile);
+            this.Controls.Add(this.profileButton);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCustomerDashboard";
@@ -116,9 +116,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button customerProfile;
+        private System.Windows.Forms.Button profileButton;
         private System.Windows.Forms.Button customerMenuButton;
-        private System.Windows.Forms.Button customerSupportButton;
+        private System.Windows.Forms.Button customerOrdersButton;
         private System.Windows.Forms.Button customerFeedbackButton;
         private System.Windows.Forms.Button customerLogoutButton;
     }

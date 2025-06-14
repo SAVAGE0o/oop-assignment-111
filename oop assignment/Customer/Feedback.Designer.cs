@@ -30,7 +30,7 @@
         {
             this.doneOrderList = new System.Windows.Forms.ListBox();
             this.feedbackTextBox = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.sendButton = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,15 +52,15 @@
             this.feedbackTextBox.TabIndex = 10;
             this.feedbackTextBox.Text = "";
             // 
-            // button2
+            // sendButton
             // 
-            this.button2.Location = new System.Drawing.Point(576, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 35);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Send";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.sendButton.Location = new System.Drawing.Point(576, 396);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(78, 35);
+            this.sendButton.TabIndex = 11;
+            this.sendButton.Text = "Send";
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // returnButton
             // 
@@ -80,7 +80,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.returnButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.sendButton);
             this.Controls.Add(this.feedbackTextBox);
             this.Controls.Add(this.doneOrderList);
             this.DoubleBuffered = true;
@@ -94,7 +94,7 @@
         #endregion
         private System.Windows.Forms.ListBox doneOrderList;
         private System.Windows.Forms.RichTextBox feedbackTextBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button returnButton;
     }
 }

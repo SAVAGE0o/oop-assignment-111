@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.customerMenuList = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.menuReturnButton = new System.Windows.Forms.Button();
             this.menuList = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,16 +46,16 @@
             this.customerMenuList.TabIndex = 0;
             this.customerMenuList.SelectedIndexChanged += new System.EventHandler(this.customerMenuList_SelectedIndexChanged);
             // 
-            // button1
+            // menuReturnButton
             // 
-            this.button1.Location = new System.Drawing.Point(603, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuReturnButton.Location = new System.Drawing.Point(603, 378);
+            this.menuReturnButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menuReturnButton.Name = "menuReturnButton";
+            this.menuReturnButton.Size = new System.Drawing.Size(102, 42);
+            this.menuReturnButton.TabIndex = 10;
+            this.menuReturnButton.Text = "Return";
+            this.menuReturnButton.UseVisualStyleBackColor = true;
+            this.menuReturnButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuList
             // 
@@ -89,7 +89,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(717, 431);
             this.Controls.Add(this.menuList);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuReturnButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.customerMenuList);
             this.DoubleBuffered = true;
@@ -105,7 +105,7 @@
         #endregion
         private System.Windows.Forms.ListBox customerMenuList;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button menuReturnButton;
         private System.Windows.Forms.ListBox menuList;
     }
 }
