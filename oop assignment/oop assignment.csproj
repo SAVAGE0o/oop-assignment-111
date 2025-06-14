@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddUser.cs" />
     <Compile Include="Admin\DataBaseHelper.cs" />
     <Compile Include="Customer\Checkout.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,8 @@
     <Compile Include="Customer\FormCustomerDashboard[.Designer.cs">
       <DependentUpon>FormCustomerDashboard[.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditUser.cs" />
+    <Compile Include="Admin\DeleteUser.cs" />
     <Compile Include="Manager\EwalletTopUP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +183,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\user.cs" />
     <Compile Include="Admin\usermanager.cs" />
+    <Compile Include="Admin\ViewUsers.cs" />
+    <Compile Include="Admin\SelectUserToEdit.cs" />
     <EmbeddedResource Include="Customer\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
