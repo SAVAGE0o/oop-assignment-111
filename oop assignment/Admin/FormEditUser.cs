@@ -2,84 +2,91 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient; // Needed to work with SQL Server
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; // Needed to build the form
+using System.Windows.Forms;
 
 namespace oop_assignment
 {
     public partial class FormEditUser : Form
     {
-        // Default constructor – runs when the form is created with no data
+        // Empty constructor (rarely used)
         public FormEditUser()
         {
-            InitializeComponent(); // Set up the form controls
+            InitializeComponent();
         }
 
-        // Overloaded constructor – this one is used when opening the form with user data
-        public FormEditUser(string userID, string username, string email, string password, string role, string wallet)
+        // Overloaded constructor – pre‑fills form when you pass user data in
+        public FormEditUser(string userID, string username,
+                            string email, string password,
+                            string role, string wallet)
         {
-            InitializeComponent(); // Set up the form controls
+            InitializeComponent();
 
-            // Fill in the form fields with existing user data
             txtUserID.Text = userID;
             txtUsername.Text = username;
             txtEmail.Text = email;
             txtPassword.Text = password;
-            cmbRole.SelectedItem = role; // Set the selected role in the combo box
+            cmbRole.SelectedItem = role;
             txtWallet.Text = wallet;
         }
 
-        // Runs when the form loads
+        // Populate role combo box on load
         private void FormEditUser_Load(object sender, EventArgs e)
         {
-            // Add the user roles to the combo box so the user can choose
-            cmbRole.Items.AddRange(new string[] { "System Admin", "Manager", "Chef", "Customer" });
+            cmbRole.Items.AddRange(new[]
+            {
+                "System Admin", "Manager", "Chef", "Customer"
+            });
         }
 
-        // Runs when the Cancel button is clicked
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Close the form without saving changes
-        }
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
 
-        // Runs when the Update button is clicked
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                // Create a new User object and fill it with the updated values from the form
-                User user = new User
+                // --- basic validation ---
+                if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
+                    string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                    string.IsNullOrWhiteSpace(txtPassword.Text) ||
+                    cmbRole.SelectedItem == null ||
+                    string.IsNullOrWhiteSpace(txtWallet.Text))
                 {
-                    UserID = int.Parse(txtUserID.Text.Trim()), // Convert UserID from text to int
-                    FullName = txtUsername.Text.Trim(),         // Set FullName (same as username here)
+                    MessageBox.Show("Please fill in all fields.");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtWallet.Text, out decimal wallet))
+                {
+                    MessageBox.Show("Wallet must be a number.");
+                    return;
+                }
+
+                // --- build User object ---
+                var user = new User
+                {
+                    UserID = int.Parse(txtUserID.Text.Trim()),
+                    FullName = txtUsername.Text.Trim(),
                     Email = txtEmail.Text.Trim(),
                     Password = txtPassword.Text.Trim(),
-                    Role = cmbRole.SelectedItem?.ToString(),   // Get selected role
-                    WalletBalance = decimal.Parse(txtWallet.Text.Trim()) // Convert wallet to decimal
+                    Role = cmbRole.SelectedItem.ToString(),
+                    WalletBalance = wallet
                 };
 
-                // Call UpdateUser method from UserManager to update this user in the database
-                bool success = UserManager.UpdateUser(user);
+                // --- run the update via EditUser wrapper ---
+                bool success = new EditUser(user).Execute();
 
-                if (success)
-                {
-                    // Show success message and close the form
-                    MessageBox.Show("User updated successfully.");
-                    this.Close();
-                }
-                else
-                {
-                    // If no row was affected (maybe wrong ID), show this
-                    MessageBox.Show("No rows updated. Check UserID.");
-                }
+                MessageBox.Show(success
+                    ? "User updated successfully."
+                    : "No rows updated. Check UserID.");
+
+                if (success) Close();
             }
             catch (Exception ex)
             {
-                // If there's any error (like invalid input), show it
                 MessageBox.Show("Error updating user: " + ex.Message);
             }
         }

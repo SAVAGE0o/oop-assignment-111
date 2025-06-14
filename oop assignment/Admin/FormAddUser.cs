@@ -2,98 +2,79 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient; // For connecting and working with SQL database
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; // For using forms and controls
+using System.Windows.Forms;
 
 namespace oop_assignment
 {
     public partial class FormAddUser : Form
     {
-        // Constructor: when the form is created, this runs first
         public FormAddUser()
         {
-            InitializeComponent(); // This loads all the controls (like textboxes, buttons, etc.)
+            InitializeComponent();   // Loads textboxes, buttons, etc.
         }
 
-        // This runs when I click the "Save" button
+        // Save button
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // I get all the data entered by the user into variables
-            string username = txtUsername.Text.Trim(); // Remove extra spaces from username
-            string email = txtEmail.Text.Trim();       // Remove extra spaces from email
-            string password = txtPassword.Text.Trim(); // Remove extra spaces from password
-            string role = cmbRole.SelectedItem?.ToString() ?? ""; // Get selected role from the dropdown
-            string walletText = txtWallet.Text.Trim(); // Get wallet balance as text
+            // 1) Gather data from form fields
+            string username = txtUsername.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            string role = cmbRole.SelectedItem?.ToString() ?? "";
+            string walletText = txtWallet.Text.Trim();
 
-            // If any field is empty, show error and stop
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) ||
-                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(role) || string.IsNullOrEmpty(walletText))
+            // 2) Basic validation
+            if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(role) ||
+                string.IsNullOrWhiteSpace(walletText))
             {
-                MessageBox.Show("Please fill in all fields."); // Show a message box
-                return; // Stop the function here
-            }
-
-            // Try to convert wallet text to decimal (number with decimals)
-            if (!decimal.TryParse(walletText, out decimal wallet))
-            {
-                MessageBox.Show("Invalid wallet amount."); // If conversion fails, show error
+                MessageBox.Show("Please fill in all fields.");
                 return;
             }
 
-            // Connection string to my local database
-            string connStr = "Data Source=Abofares;Initial Catalog=SedapMakanDB;Integrated Security=True";
-
-            // Using statement makes sure the connection closes properly after use
-            using (SqlConnection conn = new SqlConnection(connStr))
+            if (!decimal.TryParse(walletText, out decimal wallet))
             {
-                try
-                {
-                    conn.Open(); // Open the connection to the database
-
-                    // SQL command to insert the new user data into the Users table
-                    string query = "INSERT INTO Users (Username, Email, Password, Role, WalletBalance) " +
-                                   "VALUES (@Username, @Email, @Password, @Role, @Wallet)";
-
-                    // Create the command and add the values to it
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
-                    cmd.Parameters.AddWithValue("@Role", role);
-                    cmd.Parameters.AddWithValue("@Wallet", wallet);
-
-                    // Run the command (insert into database)
-                    cmd.ExecuteNonQuery();
-
-                    // Show success message
-                    MessageBox.Show("User added successfully.");
-
-                    // Close the form after adding the user
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    // If something goes wrong with the database, show the error message
-                    MessageBox.Show("Database error: " + ex.Message);
-                }
+                MessageBox.Show("Invalid wallet amount.");
+                return;
             }
+
+            // 3) Build User object
+            var user = new User
+            {
+                FullName = username,
+                Email = email,
+                Password = password,
+                Role = role,
+                WalletBalance = wallet
+            };
+
+            // 4) Use the AddUser service (no SQL here!)
+            bool success = new AddUser(user).Execute();
+
+            // 5) Feedback
+            MessageBox.Show(success
+                ? "User added successfully."
+                : "Failed to add user.");
+
+            if (success) Close();
         }
 
-        // This runs when the form first loads
+        // Form load
         private void FormAddUser_Load(object sender, EventArgs e)
         {
-            // Add the list of user roles to the role combo box
-            cmbRole.Items.AddRange(new string[] { "System Admin", "Manager", "Chef", "Customer" });
+            cmbRole.Items.AddRange(new[]
+            {
+                "System Admin", "Manager", "Chef", "Customer"
+            });
         }
 
-        // This runs when I click the Cancel button
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Just close the form without saving anything
-        }
+        // Cancel button
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
     }
 }

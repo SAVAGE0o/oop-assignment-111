@@ -1,59 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient; // Needed for SQL Server database connection
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms; // Needed for form controls (buttons, datagrid, etc.)
+﻿// File: FormViewUsers.cs
+using System;
+using System.ComponentModel;   // For BindingList
+using System.Windows.Forms;    // WinForms controls
 
 namespace oop_assignment
 {
     public partial class FormViewUsers : Form
     {
-        // This constructor runs when the form is opened
-        public FormViewUsers()
-        {
-            InitializeComponent(); // Set up the form controls
-        }
+        public FormViewUsers() => InitializeComponent();
 
-        // This runs when the "Load" button is clicked
+        //LOAD button
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            // Connection string to the database (SedapMakanDB)
-            string connStr = "Data Source=MSI;Initial Catalog=SedapMakanDB;Integrated Security=True";
-
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                conn.Open(); // Open the database connection
-
-                // Create a SQL adapter to run a SELECT * query on Users table
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Users", conn);
-
-                // Create a DataTable to hold the data from the query
-                DataTable dt = new DataTable();
-
-                // Fill the DataTable with results from the database
-                da.Fill(dt);
-
-                // Set the data source of the DataGridView to show the users
-                dgvUsers.DataSource = dt;
+                // Get list through the ViewUsers helper
+                var users = new ViewUsers().Execute();   // List<User>
+                dgvUsers.DataSource = new BindingList<User>(users);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading users: " + ex.Message);
             }
         }
 
-        // This runs when the "Close" button is clicked
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Just close the form
-        }
+        // CLOSE button
+        private void btnClose_Click(object sender, EventArgs e) => Close();
 
-        // This runs when the form first loads
+        // Optional: auto‑load on form open
         private void FormViewUsers_Load(object sender, EventArgs e)
         {
-            // Nothing happens here now, but you can auto-load users if you want
-            // Example: btnLoad.PerformClick();
+            // btnLoad.PerformClick(); // Uncomment to auto‑load
         }
     }
 }
