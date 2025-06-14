@@ -26,7 +26,7 @@ namespace oop_assignment
                     FROM Feedback f
                     INNER JOIN Users u ON f.UserId = u.UserId
                     INNER JOIN Orders o ON f.order_id = o.order_id";
-        private SqlConnection conn = new SqlConnection(@"Data Source=Abofares;Initial Catalog=C#;Integrated Security=True");
+        private SqlConnection conn = new SqlConnection(@"Data Source=CYBORG\SQLEXPRESS;Initial Catalog=C#;Integrated Security=True");
 
 
         // Store the manager's ID passed during form initialization
@@ -143,6 +143,11 @@ namespace oop_assignment
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

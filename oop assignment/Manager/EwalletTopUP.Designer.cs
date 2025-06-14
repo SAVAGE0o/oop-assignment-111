@@ -34,27 +34,27 @@ namespace oop_assignment
             this.lblCurrentBalance = new System.Windows.Forms.Label();
             this.btnTopUp = new System.Windows.Forms.Button();
             this.btnCheckBalance = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbCI = new System.Windows.Forms.Label();
+            this.lbAm = new System.Windows.Forms.Label();
+            this.lbCb = new System.Windows.Forms.Label();
+            this.btnreturn4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(257, 73);
+            this.txtCustomerId.Location = new System.Drawing.Point(429, 155);
             this.txtCustomerId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.Size = new System.Drawing.Size(100, 22);
+            this.txtCustomerId.Size = new System.Drawing.Size(167, 22);
             this.txtCustomerId.TabIndex = 0;
             this.txtCustomerId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(257, 118);
+            this.txtAmount.Location = new System.Drawing.Point(429, 208);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(100, 22);
+            this.txtAmount.Size = new System.Drawing.Size(167, 22);
             this.txtAmount.TabIndex = 1;
             // 
             // lblCurrentBalance
@@ -68,10 +68,10 @@ namespace oop_assignment
             // 
             // btnTopUp
             // 
-            this.btnTopUp.Location = new System.Drawing.Point(257, 169);
+            this.btnTopUp.Location = new System.Drawing.Point(443, 285);
             this.btnTopUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTopUp.Name = "btnTopUp";
-            this.btnTopUp.Size = new System.Drawing.Size(97, 46);
+            this.btnTopUp.Size = new System.Drawing.Size(112, 59);
             this.btnTopUp.TabIndex = 3;
             this.btnTopUp.Text = "Top Up";
             this.btnTopUp.UseVisualStyleBackColor = true;
@@ -79,67 +79,78 @@ namespace oop_assignment
             // 
             // btnCheckBalance
             // 
-            this.btnCheckBalance.Location = new System.Drawing.Point(137, 169);
+            this.btnCheckBalance.Location = new System.Drawing.Point(300, 285);
             this.btnCheckBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckBalance.Name = "btnCheckBalance";
-            this.btnCheckBalance.Size = new System.Drawing.Size(99, 46);
+            this.btnCheckBalance.Size = new System.Drawing.Size(117, 59);
             this.btnCheckBalance.TabIndex = 4;
             this.btnCheckBalance.Text = "Check balance";
             this.btnCheckBalance.UseVisualStyleBackColor = true;
             this.btnCheckBalance.Click += new System.EventHandler(this.btnCheckBalance_Click);
             // 
-            // label1
+            // lbCI
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "CustomerID";
+            this.lbCI.AutoSize = true;
+            this.lbCI.BackColor = System.Drawing.Color.White;
+            this.lbCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCI.Location = new System.Drawing.Point(293, 151);
+            this.lbCI.Name = "lbCI";
+            this.lbCI.Size = new System.Drawing.Size(124, 25);
+            this.lbCI.TabIndex = 5;
+            this.lbCI.Text = "CustomerID";
             // 
-            // label2
+            // lbAm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Amount";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lbAm.AutoSize = true;
+            this.lbAm.BackColor = System.Drawing.Color.White;
+            this.lbAm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAm.Location = new System.Drawing.Point(295, 205);
+            this.lbAm.Name = "lbAm";
+            this.lbAm.Size = new System.Drawing.Size(85, 25);
+            this.lbAm.TabIndex = 6;
+            this.lbAm.Text = "Amount";
+            this.lbAm.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // lbCb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Current Balance :\r\n";
+            this.lbCb.AutoSize = true;
+            this.lbCb.BackColor = System.Drawing.Color.White;
+            this.lbCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCb.Location = new System.Drawing.Point(293, 93);
+            this.lbCb.Name = "lbCb";
+            this.lbCb.Size = new System.Drawing.Size(179, 25);
+            this.lbCb.TabIndex = 7;
+            this.lbCb.Text = "Current Balance :\r\n";
             // 
-            // button1
+            // btnreturn4
             // 
-            this.button1.Location = new System.Drawing.Point(280, 423);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnreturn4.Location = new System.Drawing.Point(635, 396);
+            this.btnreturn4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnreturn4.Name = "btnreturn4";
+            this.btnreturn4.Size = new System.Drawing.Size(109, 43);
+            this.btnreturn4.TabIndex = 8;
+            this.btnreturn4.Text = "return";
+            this.btnreturn4.UseVisualStyleBackColor = true;
+            this.btnreturn4.Click += new System.EventHandler(this.btnreturn4_Click);
             // 
             // EwalletTopUP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.Peru;
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_12_222624;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(744, 450);
+            this.Controls.Add(this.btnreturn4);
+            this.Controls.Add(this.lbCb);
+            this.Controls.Add(this.lbAm);
+            this.Controls.Add(this.lbCI);
             this.Controls.Add(this.btnCheckBalance);
             this.Controls.Add(this.btnTopUp);
             this.Controls.Add(this.lblCurrentBalance);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtCustomerId);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EwalletTopUP";
             this.Text = "EwalletTopUP";
@@ -156,10 +167,10 @@ namespace oop_assignment
         private System.Windows.Forms.Label lblCurrentBalance;
         private System.Windows.Forms.Button btnTopUp;
         private System.Windows.Forms.Button btnCheckBalance;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbCI;
+        private System.Windows.Forms.Label lbAm;
+        private System.Windows.Forms.Label lbCb;
+        private System.Windows.Forms.Button btnreturn4;
 
 
 

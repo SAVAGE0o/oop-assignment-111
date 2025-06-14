@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Admin\EditUser.cs" />
     <Compile Include="Admin\DeleteUser.cs" />
+    <Compile Include="Manager\Ewalletservice.cs" />
     <Compile Include="Manager\EwalletTopUP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +186,7 @@
     <Compile Include="Admin\usermanager.cs" />
     <Compile Include="Admin\ViewUsers.cs" />
     <Compile Include="Admin\SelectUserToEdit.cs" />
+    <Compile Include="Manager\RefundRequest.cs" />
     <EmbeddedResource Include="Customer\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +296,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-06-14 163356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-12 222624.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 193428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-12 204749.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-14 224414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-14 135444.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-12 230441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-12 232603.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

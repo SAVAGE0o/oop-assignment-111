@@ -31,79 +31,88 @@
             this.dgvRefunds = new System.Windows.Forms.DataGridView();
             this.rdoApprove = new System.Windows.Forms.RadioButton();
             this.rdoReject = new System.Windows.Forms.RadioButton();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmitRR = new System.Windows.Forms.Button();
+            this.btnreturnRR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefunds)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRefunds
             // 
             this.dgvRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRefunds.Location = new System.Drawing.Point(209, 45);
-            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRefunds.Location = new System.Drawing.Point(297, 73);
+            this.dgvRefunds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvRefunds.Name = "dgvRefunds";
             this.dgvRefunds.RowTemplate.Height = 24;
-            this.dgvRefunds.Size = new System.Drawing.Size(276, 162);
+            this.dgvRefunds.Size = new System.Drawing.Size(461, 212);
             this.dgvRefunds.TabIndex = 0;
             this.dgvRefunds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rdoApprove
             // 
             this.rdoApprove.AutoSize = true;
-            this.rdoApprove.Location = new System.Drawing.Point(218, 211);
-            this.rdoApprove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoApprove.BackColor = System.Drawing.Color.White;
+            this.rdoApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoApprove.Location = new System.Drawing.Point(318, 303);
+            this.rdoApprove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoApprove.Name = "rdoApprove";
-            this.rdoApprove.Size = new System.Drawing.Size(65, 17);
+            this.rdoApprove.Size = new System.Drawing.Size(80, 22);
             this.rdoApprove.TabIndex = 1;
             this.rdoApprove.TabStop = true;
             this.rdoApprove.Text = "Approve";
-            this.rdoApprove.UseVisualStyleBackColor = true;
+            this.rdoApprove.UseVisualStyleBackColor = false;
             // 
             // rdoReject
             // 
             this.rdoReject.AutoSize = true;
-            this.rdoReject.Location = new System.Drawing.Point(218, 246);
-            this.rdoReject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoReject.BackColor = System.Drawing.Color.White;
+            this.rdoReject.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoReject.Location = new System.Drawing.Point(318, 336);
+            this.rdoReject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoReject.Name = "rdoReject";
-            this.rdoReject.Size = new System.Drawing.Size(56, 17);
+            this.rdoReject.Size = new System.Drawing.Size(68, 22);
             this.rdoReject.TabIndex = 2;
             this.rdoReject.TabStop = true;
             this.rdoReject.Text = "Reject";
-            this.rdoReject.UseVisualStyleBackColor = true;
+            this.rdoReject.UseVisualStyleBackColor = false;
             // 
-            // btnSubmit
+            // btnSubmitRR
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(312, 264);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(80, 28);
-            this.btnSubmit.TabIndex = 3;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmitRR.Location = new System.Drawing.Point(457, 391);
+            this.btnSubmitRR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmitRR.Name = "btnSubmitRR";
+            this.btnSubmitRR.Size = new System.Drawing.Size(107, 34);
+            this.btnSubmitRR.TabIndex = 3;
+            this.btnSubmitRR.Text = "Submit";
+            this.btnSubmitRR.UseVisualStyleBackColor = true;
+            this.btnSubmitRR.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // button1
+            // btnreturnRR
             // 
-            this.button1.Location = new System.Drawing.Point(542, 339);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "return";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnreturnRR.Location = new System.Drawing.Point(723, 417);
+            this.btnreturnRR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnreturnRR.Name = "btnreturnRR";
+            this.btnreturnRR.Size = new System.Drawing.Size(75, 32);
+            this.btnreturnRR.TabIndex = 4;
+            this.btnreturnRR.Text = "return";
+            this.btnreturnRR.UseVisualStyleBackColor = true;
+            this.btnreturnRR.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormManagerRefundRQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSubmit);
+            this.BackColor = System.Drawing.Color.Peru;
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_14_224414;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnreturnRR);
+            this.Controls.Add(this.btnSubmitRR);
             this.Controls.Add(this.rdoReject);
             this.Controls.Add(this.rdoApprove);
             this.Controls.Add(this.dgvRefunds);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManagerRefundRQ";
             this.Text = "Refund Request";
             this.Load += new System.EventHandler(this.FormManagerRefundRQ_Load);
@@ -118,7 +127,7 @@
         private System.Windows.Forms.DataGridView dgvRefunds;
         private System.Windows.Forms.RadioButton rdoApprove;
         private System.Windows.Forms.RadioButton rdoReject;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmitRR;
+        private System.Windows.Forms.Button btnreturnRR;
     }
 }

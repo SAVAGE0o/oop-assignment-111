@@ -12,15 +12,14 @@ namespace oop_assignment
 {
     public partial class FormManagerDashboard : Form
     {
-        private string managerId;
+        private string managerId; // Variable to store the manager's ID
 
+        // Constructor that initializes the form and sets the manager's ID
         public FormManagerDashboard(string managerId)
         {
-            InitializeComponent();
-            this.managerId = managerId;
-
+            InitializeComponent(); // Initialize the form's components (UI elements)
+            this.managerId = managerId; // Store the manager's ID passed to the constructor
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -47,6 +46,11 @@ namespace oop_assignment
         {
             new FormLogin().Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

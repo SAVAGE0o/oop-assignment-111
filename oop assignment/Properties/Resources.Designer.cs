@@ -73,6 +73,46 @@ namespace oop_assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_12_204749 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-12 204749", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_12_222624 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-12 222624", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_12_230441 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-12 230441", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_12_232603 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-12 232603", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2025_06_13_093534 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-06-13 093534", resourceCulture);
@@ -123,6 +163,16 @@ namespace oop_assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_13_193428 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-13 193428", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2025_06_14_092150 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-06-14 092150", resourceCulture);
@@ -133,9 +183,29 @@ namespace oop_assignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_14_135444 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-14 135444", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2025_06_14_163356 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-06-14 163356", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_06_14_224414 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-06-14 224414", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

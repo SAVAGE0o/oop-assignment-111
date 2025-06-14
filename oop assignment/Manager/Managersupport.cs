@@ -29,7 +29,7 @@ namespace oop_assignment
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+          this.Close();
         }
 
         private void Managersupport_Load(object sender, EventArgs e)
