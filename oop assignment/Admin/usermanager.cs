@@ -4,20 +4,21 @@ using System.Data.SqlClient;
 
 namespace oop_assignment
 {
+    // This static class handles all the database operations for the User table.
     public static class UserManager
     {
-        // Get all users from the database
+        // Method to get a list of all users from the database
         public static List<User> GetAllUsers()
         {
-            List<User> users = new List<User>();
+            List<User> users = new List<User>(); // List to store users
 
-            using (SqlConnection conn = DataBaseHelper.GetConnection())
+            using (SqlConnection conn = DataBaseHelper.GetConnection()) // Get DB connection
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Users", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users", conn); // SQL to get all users
+                SqlDataReader reader = cmd.ExecuteReader(); // Execute query and get results
 
-                while (reader.Read())
+                while (reader.Read()) // Loop through each row in result
                 {
                     users.Add(new User
                     {
@@ -31,20 +32,21 @@ namespace oop_assignment
                 }
             }
 
-            return users;
+            return users; // Return the full list of users
         }
 
-        // Get a single user by ID
+        // Method to get a single user from the database by their ID
         public static User GetUserById(int userId)
         {
             using (SqlConnection conn = DataBaseHelper.GetConnection())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE UserID = @UserID", conn);
-                cmd.Parameters.AddWithValue("@UserID", userId);
+                cmd.Parameters.AddWithValue("@UserID", userId); // Add the ID as a parameter
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                if (reader.Read()) // If a user is found
                 {
                     return new User
                     {
@@ -58,35 +60,45 @@ namespace oop_assignment
                 }
             }
 
-            return null;
+            return null; // Return null if no user is found
         }
 
-        // Add a new user
+        // Method to add a new user to the database
         public static bool AddUser(User user)
         {
             using (SqlConnection conn = DataBaseHelper.GetConnection())
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Users (FullName, Email, Password, Role, WalletBalance) VALUES (@FullName, @Email, @Password, @Role, @WalletBalance)", conn);
 
+                // SQL INSERT statement to add user
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO Users (FullName, Email, Password, Role, WalletBalance) " +
+                    "VALUES (@FullName, @Email, @Password, @Role, @WalletBalance)", conn);
+
+                // Add the values from the user object to the command
                 cmd.Parameters.AddWithValue("@FullName", user.FullName);
                 cmd.Parameters.AddWithValue("@Email", user.Email);
                 cmd.Parameters.AddWithValue("@Password", user.Password);
                 cmd.Parameters.AddWithValue("@Role", user.Role);
                 cmd.Parameters.AddWithValue("@WalletBalance", user.WalletBalance);
 
-                return cmd.ExecuteNonQuery() > 0;
+                return cmd.ExecuteNonQuery() > 0; // Return true if insert successful
             }
         }
 
-        // Update an existing user
+        // Method to update a user's information in the database
         public static bool UpdateUser(User user)
         {
             using (SqlConnection conn = DataBaseHelper.GetConnection())
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Users SET FullName = @FullName, Email = @Email, Password = @Password, Role = @Role, WalletBalance = @WalletBalance WHERE UserID = @UserID", conn);
 
+                // SQL UPDATE statement to update user data
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Users SET FullName = @FullName, Email = @Email, Password = @Password, Role = @Role, WalletBalance = @WalletBalance " +
+                    "WHERE UserID = @UserID", conn);
+
+                // Add updated values to the command
                 cmd.Parameters.AddWithValue("@UserID", user.UserID);
                 cmd.Parameters.AddWithValue("@FullName", user.FullName);
                 cmd.Parameters.AddWithValue("@Email", user.Email);
@@ -94,20 +106,22 @@ namespace oop_assignment
                 cmd.Parameters.AddWithValue("@Role", user.Role);
                 cmd.Parameters.AddWithValue("@WalletBalance", user.WalletBalance);
 
-                return cmd.ExecuteNonQuery() > 0;
+                return cmd.ExecuteNonQuery() > 0; // Return true if update successful
             }
         }
 
-        // Delete a user by ID
+        // Method to delete a user from the database by ID
         public static bool DeleteUser(int userId)
         {
             using (SqlConnection conn = DataBaseHelper.GetConnection())
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Users WHERE UserID = @UserID", conn);
-                cmd.Parameters.AddWithValue("@UserID", userId);
 
-                return cmd.ExecuteNonQuery() > 0;
+                // SQL DELETE statement to remove user by ID
+                SqlCommand cmd = new SqlCommand("DELETE FROM Users WHERE UserID = @UserID", conn);
+                cmd.Parameters.AddWithValue("@UserID", userId); // Add user ID to command
+
+                return cmd.ExecuteNonQuery() > 0; // Return true if delete successful
             }
         }
     }

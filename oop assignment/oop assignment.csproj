@@ -90,10 +90,10 @@
     <Compile Include="Admin\FormAdminDashboard.Designer.cs">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\FormChefDashboard.cs">
+    <Compile Include="Chef\FormChefDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\FormChefDashboard.Designer.cs">
+    <Compile Include="Chef\FormChefDashboard.Designer.cs">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\FormDeleteUser.cs">
@@ -201,7 +201,7 @@
     <EmbeddedResource Include="Admin\FormAdminDashboard.resx">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\FormChefDashboard.resx">
+    <EmbeddedResource Include="Chef\FormChefDashboard.resx">
       <DependentUpon>FormChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\FormDeleteUser.resx">
