@@ -35,7 +35,6 @@ namespace oop_assignment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // 1. تأكد من وجود قيمة لاسم المنتج
             string itemName = itemname.Text.Trim();
             if (string.IsNullOrWhiteSpace(itemName))
             {
