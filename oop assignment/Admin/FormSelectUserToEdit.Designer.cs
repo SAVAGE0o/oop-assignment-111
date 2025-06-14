@@ -39,21 +39,19 @@
             // dgvUsers
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(249, 94);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvUsers.Location = new System.Drawing.Point(221, 75);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(441, 344);
+            this.dgvUsers.Size = new System.Drawing.Size(392, 275);
             this.dgvUsers.TabIndex = 0;
             // 
             // btnLoadUsers
             // 
             this.btnLoadUsers.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLoadUsers.Location = new System.Drawing.Point(88, 178);
-            this.btnLoadUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadUsers.Location = new System.Drawing.Point(78, 142);
             this.btnLoadUsers.Name = "btnLoadUsers";
-            this.btnLoadUsers.Size = new System.Drawing.Size(104, 29);
+            this.btnLoadUsers.Size = new System.Drawing.Size(92, 23);
             this.btnLoadUsers.TabIndex = 1;
             this.btnLoadUsers.Text = "Load Users";
             this.btnLoadUsers.UseVisualStyleBackColor = false;
@@ -62,10 +60,9 @@
             // btnEditSelected
             // 
             this.btnEditSelected.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEditSelected.Location = new System.Drawing.Point(88, 246);
-            this.btnEditSelected.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditSelected.Location = new System.Drawing.Point(78, 197);
             this.btnEditSelected.Name = "btnEditSelected";
-            this.btnEditSelected.Size = new System.Drawing.Size(104, 29);
+            this.btnEditSelected.Size = new System.Drawing.Size(92, 23);
             this.btnEditSelected.TabIndex = 2;
             this.btnEditSelected.Text = "Edit Selected";
             this.btnEditSelected.UseVisualStyleBackColor = false;
@@ -74,12 +71,11 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(88, 314);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(78, 251);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 29);
+            this.btnCancel.Size = new System.Drawing.Size(92, 23);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Return";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -87,24 +83,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 31);
+            this.label1.Location = new System.Drawing.Point(342, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 29);
+            this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Select User";
             // 
             // FormSelectUserToEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditSelected);
             this.Controls.Add(this.btnLoadUsers);
             this.Controls.Add(this.dgvUsers);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSelectUserToEdit";
             this.Text = "FormSelectUserToEdit";
             this.Load += new System.EventHandler(this.FormSelectUserToEdit_Load);
