@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-          
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_13_100200;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 468);
             this.Controls.Add(this.customerTotalPayment);
@@ -138,7 +138,7 @@
             this.Controls.Add(this.customerCheckoutList);
             this.DoubleBuffered = true;
             this.Name = "Checkout";
-            this.Text = "Checkout";
+            this.Text = "h";
             this.Load += new System.EventHandler(this.Checkout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

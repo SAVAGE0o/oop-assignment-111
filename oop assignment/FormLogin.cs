@@ -47,7 +47,7 @@ namespace oop_assignment
 
                     if (reader.Read())
                     {
-                        // ✅ حفظ بيانات الجلسة
+                        
                         CurrentSession.UserId = Convert.ToInt32(reader["UserId"]);
                         CurrentSession.Username = reader["Username"].ToString();
                         CurrentSession.Email = reader["Email"].ToString();
@@ -55,7 +55,7 @@ namespace oop_assignment
 
                         MessageBox.Show("Login successful! Role: " + role);
 
-                        // ✅ فتح الفورم المناسب حسب الدور
+                       
                         switch (role)
                         {
                             case "System Admin":
@@ -80,7 +80,7 @@ namespace oop_assignment
                                 return;
                         }
 
-                        this.Hide(); // إخفاء فورم تسجيل الدخول بعد النجاح
+                        this.Hide(); 
                     }
                     else
                     {

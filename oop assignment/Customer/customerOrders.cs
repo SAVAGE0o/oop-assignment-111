@@ -95,5 +95,10 @@ namespace oop_assignment
                 MessageBox.Show("Please select an order to cancel.");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

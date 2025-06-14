@@ -38,10 +38,10 @@
             // customerProfile
             // 
             this.customerProfile.BackColor = System.Drawing.Color.Orange;
-            this.customerProfile.Location = new System.Drawing.Point(271, 59);
+            this.customerProfile.Location = new System.Drawing.Point(305, 74);
             this.customerProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerProfile.Name = "customerProfile";
-            this.customerProfile.Size = new System.Drawing.Size(124, 30);
+            this.customerProfile.Size = new System.Drawing.Size(140, 38);
             this.customerProfile.TabIndex = 1;
             this.customerProfile.Text = "Profile";
             this.customerProfile.UseVisualStyleBackColor = false;
@@ -49,10 +49,10 @@
             // customerMenuButton
             // 
             this.customerMenuButton.BackColor = System.Drawing.Color.Orange;
-            this.customerMenuButton.Location = new System.Drawing.Point(271, 112);
+            this.customerMenuButton.Location = new System.Drawing.Point(305, 140);
             this.customerMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerMenuButton.Name = "customerMenuButton";
-            this.customerMenuButton.Size = new System.Drawing.Size(124, 29);
+            this.customerMenuButton.Size = new System.Drawing.Size(140, 36);
             this.customerMenuButton.TabIndex = 2;
             this.customerMenuButton.Text = "Menu";
             this.customerMenuButton.UseVisualStyleBackColor = false;
@@ -61,10 +61,10 @@
             // customerSupportButton
             // 
             this.customerSupportButton.BackColor = System.Drawing.Color.Orange;
-            this.customerSupportButton.Location = new System.Drawing.Point(271, 160);
+            this.customerSupportButton.Location = new System.Drawing.Point(305, 200);
             this.customerSupportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerSupportButton.Name = "customerSupportButton";
-            this.customerSupportButton.Size = new System.Drawing.Size(124, 32);
+            this.customerSupportButton.Size = new System.Drawing.Size(140, 40);
             this.customerSupportButton.TabIndex = 4;
             this.customerSupportButton.Text = "Running Orders";
             this.customerSupportButton.UseVisualStyleBackColor = false;
@@ -73,10 +73,10 @@
             // customerFeedbackButton
             // 
             this.customerFeedbackButton.BackColor = System.Drawing.Color.Orange;
-            this.customerFeedbackButton.Location = new System.Drawing.Point(271, 211);
+            this.customerFeedbackButton.Location = new System.Drawing.Point(305, 264);
             this.customerFeedbackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerFeedbackButton.Name = "customerFeedbackButton";
-            this.customerFeedbackButton.Size = new System.Drawing.Size(124, 29);
+            this.customerFeedbackButton.Size = new System.Drawing.Size(140, 36);
             this.customerFeedbackButton.TabIndex = 5;
             this.customerFeedbackButton.Text = "Feedback";
             this.customerFeedbackButton.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@
             // customerLogoutButton
             // 
             this.customerLogoutButton.BackColor = System.Drawing.Color.Orange;
-            this.customerLogoutButton.Location = new System.Drawing.Point(432, 262);
+            this.customerLogoutButton.Location = new System.Drawing.Point(486, 328);
             this.customerLogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customerLogoutButton.Name = "customerLogoutButton";
-            this.customerLogoutButton.Size = new System.Drawing.Size(124, 26);
+            this.customerLogoutButton.Size = new System.Drawing.Size(140, 32);
             this.customerLogoutButton.TabIndex = 6;
             this.customerLogoutButton.Text = "Logout";
             this.customerLogoutButton.UseVisualStyleBackColor = false;
@@ -96,10 +96,11 @@
             // 
             // FormCustomerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::oop_assignment.Properties.Resources.Screenshot_2025_06_13_093534;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(566, 315);
+            this.ClientSize = new System.Drawing.Size(637, 394);
             this.Controls.Add(this.customerLogoutButton);
             this.Controls.Add(this.customerFeedbackButton);
             this.Controls.Add(this.customerSupportButton);
