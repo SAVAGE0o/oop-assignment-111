@@ -9,16 +9,17 @@ using System.Windows.Forms;
 
 namespace oop_assignment
 {
-   
 
+
+    // Represents a menu item and retrieves available items from the database
     public class menuItems
     {
-        public string Name { get; set; }
-        public int Price { get; set; }
+        public string Name { get; set; } // Name of the item
+        public int Price { get; set; }   // Price of the item
 
         private SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True");
 
-        // (availability = 'Yes')
+        // Retrieves items from Menu table where availability is 'Yes'
         public List<menuItems> GetAvailableItems()
         {
             List<menuItems> availableItems = new List<menuItems>();
@@ -42,20 +43,22 @@ namespace oop_assignment
         }
     }
 
-    // ✅ CurrentSession.cs
+    
+    // Static class to hold currently logged-in user session data
     public static class CurrentSession
     {
-        public static int UserId { get; set; }
-        public static string Username { get; set; }
-        public static string Email { get; set; }
+        public static int UserId { get; set; }     // Stores User ID
+        public static string Username { get; set; } // Stores Username
+        public static string Email { get; set; }    // Stores Email
     }
 
-
-    // ✅ DBHelper.cs
+    
+    // Provides utility methods to interact with the database
     public static class DBHelper
     {
         private static readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
+        // Retrieves item ID based on item name
         public static int GetItemIdFromDatabase(string itemName)
         {
             int itemId = 0;
@@ -71,6 +74,7 @@ namespace oop_assignment
             return itemId;
         }
 
+        // Retrieves user ID based on username
         public static int GetUserIdFromUsername(string username)
         {
             int userId = 0;
@@ -85,12 +89,14 @@ namespace oop_assignment
             }
             return userId;
         }
+
+        // Retrieves item name based on item ID
         public static string GetItemNameFromDatabase(int itemId)
         {
             string itemName = "";
             string query = "SELECT item_name FROM Menu WHERE Item_id = @itemId";
 
-            using (SqlConnection conn = new SqlConnection("Data Source=Abofares;Initial Catalog=C#;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@itemId", itemId);
@@ -104,13 +110,10 @@ namespace oop_assignment
 
             return itemName;
         }
-
     }
 
-
-    // ✅ UserWallet.cs
-
-
+    
+    // Manages user's wallet including balance, deduction and refund
     public class UserWallet
     {
         private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
@@ -124,6 +127,7 @@ namespace oop_assignment
             LoadUser();
         }
 
+        // Loads user's wallet balance from DB
         private void LoadUser()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -140,6 +144,7 @@ namespace oop_assignment
             }
         }
 
+        // Deducts amount from wallet if sufficient balance
         public bool Deduct(decimal amount)
         {
             if (amount <= Balance)
@@ -151,18 +156,21 @@ namespace oop_assignment
             return false;
         }
 
+        // Adds funds to the wallet
         public void AddFunds(decimal amount)
         {
             Balance += amount;
             UpdateBalance();
         }
 
+        // Refunds amount back to wallet
         public void Refund(decimal amount)
         {
             Balance += amount;
             UpdateBalance();
         }
 
+        // Updates wallet balance in the DB
         private void UpdateBalance()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -177,6 +185,7 @@ namespace oop_assignment
         }
     }
 
+    // Stores information about a user's order
     public class OrderInfo
     {
         public int OrderId { get; set; }
@@ -184,16 +193,20 @@ namespace oop_assignment
         public int Quantity { get; set; }
         public string Status { get; set; }
 
+        // Returns string with order details
         public override string ToString()
         {
             return $"#{OrderId} - {ItemName} x{Quantity} - {Status}";
         }
     }
 
+
+    // Handles placing and retrieving orders for users
     public class OrderManager
     {
         private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
+        // Places a new order in the Orders table
         public void PlaceOrder(int userId, int itemId, int quantity)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -208,6 +221,8 @@ namespace oop_assignment
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // Retrieves all orders placed by a specific user
         public List<OrderInfo> GetOrdersByUser(int userId)
         {
             List<OrderInfo> orders = new List<OrderInfo>();
@@ -241,32 +256,30 @@ namespace oop_assignment
             return orders;
         }
 
-
-
-
+       
+        // Manages cancellation and refund requests for orders
         public class OrderCancellationManager
         {
             private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
-            // Cancel an order and insert refund request
+            // Cancels an order and inserts a refund request
             public bool CancelOrder(int orderId, int userId, string reason)
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // Step 1: Check if the order exists and is cancellable
+                    // Check if order is cancellable
                     string checkQuery = "SELECT status, item_id FROM Orders WHERE order_id = @orderId AND UserId = @userId";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
                     checkCmd.Parameters.AddWithValue("@orderId", orderId);
                     checkCmd.Parameters.AddWithValue("@userId", userId);
-
                     SqlDataReader reader = checkCmd.ExecuteReader();
                     if (!reader.Read())
                     {
                         MessageBox.Show("Order not found or not owned by user.");
                         conn.Close();
-                        return false; // Order not found or not owned by user
+                        return false;
                     }
 
                     string status = reader["status"].ToString();
@@ -277,30 +290,24 @@ namespace oop_assignment
                     {
                         MessageBox.Show(status + orderId + userId);
                         conn.Close();
-                        return false; // Only 'In Progress' orders can be cancelled
+                        return false;
                     }
 
-                    // Step 2: Get item price from Menu
+                    // Get item price
                     string priceQuery = "SELECT price FROM Menu WHERE item_id = @itemId";
                     SqlCommand priceCmd = new SqlCommand(priceQuery, conn);
                     priceCmd.Parameters.AddWithValue("@itemId", itemId);
+                    decimal amount = Convert.ToDecimal(priceCmd.ExecuteScalar());
 
-                    object result = priceCmd.ExecuteScalar();
-
-
-                    decimal amount = Convert.ToDecimal(result);
-
-                    // Step 3: Cancel the order
+                    // Update order status
                     string updateOrderQuery = "UPDATE Orders SET status = 'Cancelled' WHERE order_id = @orderId";
                     SqlCommand updateCmd = new SqlCommand(updateOrderQuery, conn);
                     updateCmd.Parameters.AddWithValue("@orderId", orderId);
                     updateCmd.ExecuteNonQuery();
 
-                    // Step 4: Insert refund request
-                    string insertRefundQuery = @"
-                INSERT INTO RefundRequests (UserId, order_id, Amount, Reason, Status)
-                VALUES (@userId, @orderId, @amount, @reason, 'Pending')";
-
+                    // Insert refund request
+                    string insertRefundQuery = @"INSERT INTO RefundRequests (UserId, order_id, Amount, Reason, Status)
+                                              VALUES (@userId, @orderId, @amount, @reason, 'Pending')";
                     SqlCommand insertCmd = new SqlCommand(insertRefundQuery, conn);
                     insertCmd.Parameters.AddWithValue("@userId", userId);
                     insertCmd.Parameters.AddWithValue("@orderId", orderId);
@@ -313,24 +320,22 @@ namespace oop_assignment
                 }
             }
 
-            // View refund statuses
+            // Returns the refund status for a specific user
             public List<string> GetRefundStatus(int userId)
             {
                 List<string> refunds = new List<string>();
-
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = @"
-                SELECT r.order_id, r.Status, r.Amount, r.Reason, o.item_id
-                FROM RefundRequests r
-                JOIN Orders o ON r.order_id = o.order_id
-                WHERE r.UserId = @userId";
+                    string query = @"SELECT r.order_id, r.Status, r.Amount, r.Reason, o.item_id
+                                 FROM RefundRequests r
+                                 JOIN Orders o ON r.order_id = o.order_id
+                                 WHERE r.UserId = @userId";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@userId", userId);
                     conn.Open();
-
                     SqlDataReader reader = cmd.ExecuteReader();
+
                     while (reader.Read())
                     {
                         int orderId = Convert.ToInt32(reader["order_id"]);
@@ -350,17 +355,20 @@ namespace oop_assignment
             }
         }
 
+
+        // Handles submission and checking of feedback by users
         public class FeedbackManager
         {
             private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
 
+            // Submits a feedback entry into the database
             public void SubmitFeedback(int userId, int orderId, string text)
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"INSERT INTO Feedback 
-        (UserId, order_id, FeedbackText, respond, status, FeedbackDate) 
-        VALUES (@userId, @orderId, @text, NULL, @status, @date)";
+                                 (UserId, order_id, FeedbackText, respond, status, FeedbackDate) 
+                                 VALUES (@userId, @orderId, @text, NULL, @status, @date)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@userId", userId);
@@ -372,12 +380,12 @@ namespace oop_assignment
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-
-
             }
+
+            // Checks whether a user has already given feedback on an order
             public bool HasFeedback(int userId, int orderId)
             {
-                using (SqlConnection conn = new SqlConnection("Data Source = Abofares; Initial Catalog = C#;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = "SELECT COUNT(*) FROM Feedback WHERE UserId = @userId AND order_id = @orderId";
                     SqlCommand cmd = new SqlCommand(query, conn);
@@ -389,6 +397,5 @@ namespace oop_assignment
                 }
             }
         }
-
     }
 }
