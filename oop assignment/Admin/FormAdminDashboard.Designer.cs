@@ -34,14 +34,16 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnViewUsers
             // 
             this.btnViewUsers.BackColor = System.Drawing.SystemColors.Control;
-            this.btnViewUsers.Location = new System.Drawing.Point(71, 122);
+            this.btnViewUsers.Location = new System.Drawing.Point(79, 184);
+            this.btnViewUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnViewUsers.Name = "btnViewUsers";
-            this.btnViewUsers.Size = new System.Drawing.Size(102, 23);
+            this.btnViewUsers.Size = new System.Drawing.Size(115, 29);
             this.btnViewUsers.TabIndex = 0;
             this.btnViewUsers.Text = "View Users";
             this.btnViewUsers.UseVisualStyleBackColor = false;
@@ -50,9 +52,10 @@
             // btnAddUser
             // 
             this.btnAddUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAddUser.Location = new System.Drawing.Point(71, 171);
+            this.btnAddUser.Location = new System.Drawing.Point(79, 246);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(102, 23);
+            this.btnAddUser.Size = new System.Drawing.Size(115, 29);
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = false;
@@ -61,9 +64,10 @@
             // btnEditUser
             // 
             this.btnEditUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEditUser.Location = new System.Drawing.Point(71, 214);
+            this.btnEditUser.Location = new System.Drawing.Point(79, 300);
+            this.btnEditUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(102, 23);
+            this.btnEditUser.Size = new System.Drawing.Size(115, 29);
             this.btnEditUser.TabIndex = 2;
             this.btnEditUser.Text = "Edit User";
             this.btnEditUser.UseVisualStyleBackColor = false;
@@ -72,9 +76,10 @@
             // btnDeleteUser
             // 
             this.btnDeleteUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteUser.Location = new System.Drawing.Point(71, 265);
+            this.btnDeleteUser.Location = new System.Drawing.Point(79, 363);
+            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(102, 23);
+            this.btnDeleteUser.Size = new System.Drawing.Size(115, 29);
             this.btnDeleteUser.TabIndex = 3;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = false;
@@ -83,9 +88,10 @@
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.Location = new System.Drawing.Point(71, 309);
+            this.btnLogout.Location = new System.Drawing.Point(79, 418);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(102, 23);
+            this.btnLogout.Size = new System.Drawing.Size(115, 29);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -95,25 +101,39 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 33);
+            this.label1.Location = new System.Drawing.Point(34, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 54);
+            this.label1.Size = new System.Drawing.Size(343, 68);
             this.label1.TabIndex = 6;
             this.label1.Text = "Admin Form";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(79, 133);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Profile";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormAdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnViewUsers);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAdminDashboard";
             this.Text = "FormAdminDashboard";
             this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
@@ -129,5 +149,6 @@
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

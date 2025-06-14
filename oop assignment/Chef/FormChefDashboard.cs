@@ -42,8 +42,8 @@ namespace oop_assignment
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            ProfileForm profileForm = new ProfileForm();
-            profileForm.Show();
+            new ProfileForm().Show();
+            this.Hide();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

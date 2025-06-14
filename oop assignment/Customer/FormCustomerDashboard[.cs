@@ -56,5 +56,11 @@ namespace oop_assignment
         {
 
         }
+
+        private void profileButton_Click(object sender, EventArgs e)
+        {
+            new ProfileForm().Show();
+            this.Hide();
+        }
     }
 }

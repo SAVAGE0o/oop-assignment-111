@@ -45,6 +45,7 @@
             this.profileButton.TabIndex = 1;
             this.profileButton.Text = "Profile";
             this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // customerMenuButton
             // 

@@ -15,7 +15,7 @@ namespace oop_assignment
     public partial class FormLogin : Form
     {
         private string managerId = "12345";
-        private readonly string connectionString = "Data Source=MSI;Initial Catalog=C#;Integrated Security=True";
+        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
         public FormLogin()
         {
             InitializeComponent();
