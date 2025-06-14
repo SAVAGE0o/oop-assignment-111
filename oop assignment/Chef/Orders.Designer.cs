@@ -34,6 +34,7 @@
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Peru;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonGoback);
             this.panel1.Controls.Add(this.cmbStatus);
             this.panel1.Controls.Add(this.dataGridViewOrders);
@@ -55,7 +57,7 @@
             // buttonGoback
             // 
             this.buttonGoback.Font = new System.Drawing.Font("Cooper Black", 8F);
-            this.buttonGoback.Location = new System.Drawing.Point(23, 395);
+            this.buttonGoback.Location = new System.Drawing.Point(3, 489);
             this.buttonGoback.Name = "buttonGoback";
             this.buttonGoback.Size = new System.Drawing.Size(127, 29);
             this.buttonGoback.TabIndex = 4;
@@ -72,7 +74,7 @@
             "In Progress",
             "Completed",
             "Cancelled"});
-            this.cmbStatus.Location = new System.Drawing.Point(254, 177);
+            this.cmbStatus.Location = new System.Drawing.Point(240, 177);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 27);
             this.cmbStatus.TabIndex = 3;
@@ -112,6 +114,15 @@
             this.btnViewOrders.UseVisualStyleBackColor = true;
             this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 8F);
+            this.label1.Location = new System.Drawing.Point(85, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 30);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Select Status : ";
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -135,5 +146,6 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Button buttonGoback;
+        private System.Windows.Forms.Label label1;
     }
 }
