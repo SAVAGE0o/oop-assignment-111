@@ -187,6 +187,20 @@
     <Compile Include="Admin\ViewUsers.cs" />
     <Compile Include="Admin\SelectUserToEdit.cs" />
     <Compile Include="Manager\RefundRequest.cs" />
+    <Compile Include="Admin\WalletTransactionManager.cs" />
+    <Compile Include="Admin\SalesManager.cs" />
+    <Compile Include="Admin\ViewSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewSalesReport.Designer.cs">
+      <DependentUpon>ViewSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewEWalletTopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewEWalletTopUp.Designer.cs">
+      <DependentUpon>ViewEWalletTopUp.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customer\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +274,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Admin\ViewSalesReport.resx">
+      <DependentUpon>ViewSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ViewEWalletTopUp.resx">
+      <DependentUpon>ViewEWalletTopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

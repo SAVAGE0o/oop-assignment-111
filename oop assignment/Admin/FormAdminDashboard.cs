@@ -68,5 +68,15 @@ namespace oop_assignment
             new ProfileForm().Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new FormViewEWalletTopUp().ShowDialog();
+        }
+
+        private void btnViewSalesReport_Click(object sender, EventArgs e)
+        {
+            new FormViewSalesReport().ShowDialog();
+        }
     }
 }

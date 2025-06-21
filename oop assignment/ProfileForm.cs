@@ -14,7 +14,7 @@ namespace oop_assignment
 {
     public partial class ProfileForm: Form
     {
-        private readonly string connectionString = "Data Source=Abofares;Initial Catalog=C#;Integrated Security=True";
+        private readonly string connectionString = "Data Source=MSI;Initial Catalog=C#;Integrated Security=True";
         public ProfileForm()
         {
             InitializeComponent();
